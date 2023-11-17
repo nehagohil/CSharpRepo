@@ -18,8 +18,11 @@
             //NullColaesingOperator nullColaesingOperator = new NullColaesingOperator();
             //nullColaesingOperator.nulldemo();
 
-            DatatypeConversion datatypeConversion = new DatatypeConversion();
-            datatypeConversion.ConversionDemo();
+            //DatatypeConversion datatypeConversion = new DatatypeConversion();
+            //datatypeConversion.ConversionDemo();
+
+            ArrayDemo arrayDemo = new ArrayDemo();
+            arrayDemo.arrayDemo();
         }
     }
 }
