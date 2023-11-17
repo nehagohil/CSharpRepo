@@ -28,7 +28,8 @@
             //ifElseDemo.ifelsedemo();
 
             SwitchCaseDemo switchCaseDemo = new SwitchCaseDemo();
-            switchCaseDemo.SwitchDemo();
+           // switchCaseDemo.SwitchDemo();
+            switchCaseDemo.GotoDemo();
         }
     }
 }
