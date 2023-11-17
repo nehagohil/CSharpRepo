@@ -24,8 +24,11 @@
             //ArrayDemo arrayDemo = new ArrayDemo();
             //arrayDemo.arrayDemo();
 
-            IfElseDemo ifElseDemo = new IfElseDemo();
-            ifElseDemo.ifelsedemo();
+            //IfElseDemo ifElseDemo = new IfElseDemo();
+            //ifElseDemo.ifelsedemo();
+
+            SwitchCaseDemo switchCaseDemo = new SwitchCaseDemo();
+            switchCaseDemo.SwitchDemo();
         }
     }
 }
