@@ -27,9 +27,12 @@
             //IfElseDemo ifElseDemo = new IfElseDemo();
             //ifElseDemo.ifelsedemo();
 
-            SwitchCaseDemo switchCaseDemo = new SwitchCaseDemo();
-           // switchCaseDemo.SwitchDemo();
-            switchCaseDemo.GotoDemo();
+            //SwitchCaseDemo switchCaseDemo = new SwitchCaseDemo();
+            // switchCaseDemo.SwitchDemo();
+            //switchCaseDemo.GotoDemo();
+
+            LoopDemo loopDemo = new LoopDemo();
+            loopDemo.loopsdemo();
         }
     }
 }
