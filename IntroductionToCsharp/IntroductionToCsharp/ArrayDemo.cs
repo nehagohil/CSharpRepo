@@ -2,6 +2,9 @@
 
 namespace IntroductionToCsharp
 {
+    /// <summary>
+    /// This class illustrates the ArrayDemo
+    /// </summary>
     public class ArrayDemo
     {
         public ArrayDemo()

@@ -21,8 +21,11 @@
             //DatatypeConversion datatypeConversion = new DatatypeConversion();
             //datatypeConversion.ConversionDemo();
 
-            ArrayDemo arrayDemo = new ArrayDemo();
-            arrayDemo.arrayDemo();
+            //ArrayDemo arrayDemo = new ArrayDemo();
+            //arrayDemo.arrayDemo();
+
+            IfElseDemo ifElseDemo = new IfElseDemo();
+            ifElseDemo.ifelsedemo();
         }
     }
 }
