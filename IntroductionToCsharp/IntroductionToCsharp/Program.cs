@@ -9,8 +9,11 @@
             //Console.WriteLine("Min value is :" +int.MinValue);
             //Console.WriteLine("Max value is :" +int.MaxValue);
 
-            EscapeSequence escapeSequence = new EscapeSequence();
-            escapeSequence.print();
+            //EscapeSequence escapeSequence = new EscapeSequence();
+            //escapeSequence.print();
+
+            Operators operators = new Operators();
+            operators.operations();
         }
     }
 }
