@@ -18,6 +18,15 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Multiplication is :" + (number * anothernumber));
             //Console.WriteLine("Division is  :" + (anothernumber / number));
 
+            //if(number <= 10)
+            //{
+            //    Console.WriteLine("true");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("false");
+            //}
+
             bool IsNumber = number == 10 ? true : false;
             Console.WriteLine("Number == 10 {0}", IsNumber);
 

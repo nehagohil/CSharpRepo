@@ -12,8 +12,14 @@
             //EscapeSequence escapeSequence = new EscapeSequence();
             //escapeSequence.print();
 
-            Operators operators = new Operators();
-            operators.operations();
+            //Operators operators = new Operators();
+            //operators.operations();
+
+            //NullColaesingOperator nullColaesingOperator = new NullColaesingOperator();
+            //nullColaesingOperator.nulldemo();
+
+            DatatypeConversion datatypeConversion = new DatatypeConversion();
+            datatypeConversion.ConversionDemo();
         }
     }
 }
