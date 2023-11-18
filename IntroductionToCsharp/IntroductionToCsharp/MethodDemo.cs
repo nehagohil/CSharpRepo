@@ -36,5 +36,15 @@ namespace IntroductionToCsharp
             sum = fn + sn;
             product = fn * sn;
         }
+
+        public static void paramsarray(params int[] arr)
+        {
+            //foreach (var item in arr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            Console.WriteLine("The length of the array is {0}",arr.Length);
+        }
     }
 }

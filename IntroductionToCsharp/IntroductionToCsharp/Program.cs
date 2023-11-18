@@ -42,10 +42,14 @@
             //int i = 0;
             //MethodDemo.refvalue(ref i);
             //Console.WriteLine(i);
-            int sum = 0;
-            int product = 0;
-            MethodDemo.calculate(10,20,out sum, out product);
-            Console.WriteLine("sum is {0} and product is {1}",sum,product);
+            //int sum = 0;
+            //int product = 0;
+            //MethodDemo.calculate(10,20,out sum, out product);
+            //Console.WriteLine("sum is {0} and product is {1}",sum,product);
+
+            int[] arr = new int[5];
+            MethodDemo.paramsarray();
+            MethodDemo.paramsarray(1,2,3,4,5,6,7,8,9,10);
         }
     }
 }
