@@ -12,11 +12,15 @@ namespace IntroductionToCsharp
         {
             Console.WriteLine("This is parent class constructor");
         }
+        public ConstructorInvocationDemo(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 
     public class ConstructorInvocationDemoChild : ConstructorInvocationDemo
     {
-        public ConstructorInvocationDemoChild()
+        public ConstructorInvocationDemoChild() : base("I am calling base class parameterizec constructor from the child class")
         {
             Console.WriteLine("This is child class constructor");
         }
