@@ -14,7 +14,7 @@ namespace IntroductionToCsharp
         static StaticDemo()
         {
             Console.WriteLine("Static constructor called..");
-            _pi = 3.14f;
+            StaticDemo._pi = 3.14f;
         }
         public StaticDemo(int radius)
         {

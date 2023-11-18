@@ -70,9 +70,23 @@ namespace IntroductionToCsharp
             //Customer customer1 = new Customer();
             //customer1.PrintFullname();
 
-            StaticDemo staticDemo = new StaticDemo(5);
-            float areaofcirecle = staticDemo.calculateArea();
-            Console.WriteLine("Area of circle is {0}",areaofcirecle);
+            //StaticDemo staticDemo = new StaticDemo(5);
+            //float areaofcirecle = staticDemo.calculateArea();
+            //Console.WriteLine("Area of circle is {0}",areaofcirecle);
+
+            FullTimeEmployee FTE = new FullTimeEmployee();
+            FTE.firstname = "Neha";
+            FTE.lastname = "Gohil";
+            FTE.yearlysalary = 50000;
+            FTE.PrintFullname();
+            FTE.printsal();
+
+            PartTimeEmployee PTE = new PartTimeEmployee();
+            PTE.firstname = "xyz";
+            PTE.lastname = "pqr";
+            PTE.hourlyRate = 300;
+            PTE.PrintFullname();
+            PTE.printsal();
 
         }
     }
