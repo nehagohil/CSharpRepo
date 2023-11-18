@@ -74,19 +74,21 @@ namespace IntroductionToCsharp
             //float areaofcirecle = staticDemo.calculateArea();
             //Console.WriteLine("Area of circle is {0}",areaofcirecle);
 
-            FullTimeEmployee FTE = new FullTimeEmployee();
-            FTE.firstname = "Neha";
-            FTE.lastname = "Gohil";
-            FTE.yearlysalary = 50000;
-            FTE.PrintFullname();
-            FTE.printsal();
+            //FullTimeEmployee FTE = new FullTimeEmployee();
+            //FTE.firstname = "Neha";
+            //FTE.lastname = "Gohil";
+            //FTE.yearlysalary = 50000;
+            //FTE.PrintFullname();
+            //FTE.printsal();
 
-            PartTimeEmployee PTE = new PartTimeEmployee();
-            PTE.firstname = "xyz";
-            PTE.lastname = "pqr";
-            PTE.hourlyRate = 300;
-            PTE.PrintFullname();
-            PTE.printsal();
+            //PartTimeEmployee PTE = new PartTimeEmployee();
+            //PTE.firstname = "xyz";
+            //PTE.lastname = "pqr";
+            //PTE.hourlyRate = 300;
+            //PTE.PrintFullname();
+            //PTE.printsal();
+
+            ConstructorInvocationDemoChild CtorChild = new ConstructorInvocationDemoChild();
 
         }
     }
