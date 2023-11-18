@@ -1,4 +1,8 @@
-﻿namespace IntroductionToCsharp
+﻿using IntroductionToCsharp;
+using PATA = IntroductionToCsharp.ProjectA.TeamA;
+using PATB = IntroductionToCsharp.ProjectB.TeamB;
+
+namespace IntroductionToCsharp
 {
     class Program
     {
@@ -47,9 +51,19 @@
             //MethodDemo.calculate(10,20,out sum, out product);
             //Console.WriteLine("sum is {0} and product is {1}",sum,product);
 
-            int[] arr = new int[5];
-            MethodDemo.paramsarray();
-            MethodDemo.paramsarray(1,2,3,4,5,6,7,8,9,10);
+            //int[] arr = new int[5];
+            //MethodDemo.paramsarray();
+            //MethodDemo.paramsarray(1,2,3,4,5,6,7,8,9,10);
+
+            //fully qualified
+            //ProjectA.TeamA.NameSpaceDemo nameSpaceDemo = new ProjectA.TeamA.NameSpaceDemo();
+            //nameSpaceDemo.print();
+
+            PATB.NameSpaceDemo nameSpaceDemo = new PATB.NameSpaceDemo();
+            nameSpaceDemo.print();
+            PATA.NameSpaceDemo nameSpaceDemo1 = new PATA.NameSpaceDemo();
+            nameSpaceDemo1.print();
+
         }
     }
 }
