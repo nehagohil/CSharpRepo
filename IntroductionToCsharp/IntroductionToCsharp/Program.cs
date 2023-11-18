@@ -127,16 +127,20 @@ namespace IntroductionToCsharp
             //Console.WriteLine(stud1.name);
             //Console.WriteLine(stud1.marks);
 
-            StudentStructDemo studstruct = new StudentStructDemo(1,"Viraj");
-            studstruct.PrintName();
+            //StudentStructDemo studstruct = new StudentStructDemo(1,"Viraj");
+            //studstruct.PrintName();
 
             //object initializer
-            StudentStructDemo studstruct1 = new StudentStructDemo
-            {
-                Id = 101,
-                Name = "Babloo"
-            };
-            studstruct1.PrintName();
+            //StudentStructDemo studstruct1 = new StudentStructDemo
+            //{
+            //    Id = 101,
+            //    Name = "Babloo"
+            //};
+            //studstruct1.PrintName();
+
+            IInterfaceDemo interfaceDemo = new InterfaceDemo();
+            interfaceDemo.PrintMessage();
+            interfaceDemo.PrintMessagefromsecondinterface();
 
         }
     }
