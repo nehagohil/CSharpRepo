@@ -25,6 +25,13 @@ namespace IntroductionToCsharp
         {
             Console.WriteLine(yearlysalary);
         }
+        /// <summary>
+        /// This method is for demonstrating the method hiding demo using new keyword
+        /// </summary>
+        public new void PrintFullname()
+        {
+            Console.WriteLine(firstname + " " + lastname +" - Full Time");
+        }
     }
 
     public class PartTimeEmployee : Employee
@@ -33,6 +40,13 @@ namespace IntroductionToCsharp
         public void printsal()
         {
             Console.WriteLine(hourlyRate);
+        }
+        /// <summary>
+        /// This method is for demonstrating the method hiding demo using new keyword
+        /// </summary>
+        public new void PrintFullname()
+        {
+            Console.WriteLine(firstname + " " + lastname + " - Part Time");
         }
     }
 }
