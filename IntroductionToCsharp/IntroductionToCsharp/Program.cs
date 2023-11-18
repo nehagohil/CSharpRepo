@@ -39,10 +39,13 @@
             //int result = methodDemo.sum(10,20);
             //Console.WriteLine(result);
 
-            int i = 0;
-            MethodDemo.refvalue(ref i);
-            Console.WriteLine(i);
-
+            //int i = 0;
+            //MethodDemo.refvalue(ref i);
+            //Console.WriteLine(i);
+            int sum = 0;
+            int product = 0;
+            MethodDemo.calculate(10,20,out sum, out product);
+            Console.WriteLine("sum is {0} and product is {1}",sum,product);
         }
     }
 }

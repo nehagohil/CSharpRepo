@@ -30,5 +30,11 @@ namespace IntroductionToCsharp
         {
             j = 101;
         }
+
+        public static void calculate(int fn, int sn, out int sum, out int product)
+        {
+            sum = fn + sn;
+            product = fn * sn;
+        }
     }
 }
