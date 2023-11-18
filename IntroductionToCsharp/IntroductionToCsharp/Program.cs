@@ -105,8 +105,20 @@ namespace IntroductionToCsharp
             //    e.PrintFullName();
             //}
 
-            MethodOverloadingDemo methodOverloadingDemo = new MethodOverloadingDemo();
-            methodOverloadingDemo.add(10, 20,30);
+            //MethodOverloadingDemo methodOverloadingDemo = new MethodOverloadingDemo();
+            //methodOverloadingDemo.add(10, 20,30);
+
+            StudentGetterSetterDemo stud = new StudentGetterSetterDemo();
+            stud.SetId(1);
+            stud.SetName("Neha");
+            int id = stud.GetId();
+            string name = stud.GetName();
+            int marks = stud.GetPassMarks();
+
+            Console.WriteLine("Id is:"+id);
+            Console.WriteLine("Name is :"+name);
+            Console.WriteLine("Pass marks is :"+marks);
+            stud.DisplayStudentDetails();
         }
     }
 }
