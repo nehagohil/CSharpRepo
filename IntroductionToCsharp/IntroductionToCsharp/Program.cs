@@ -94,16 +94,19 @@ namespace IntroductionToCsharp
 
             //Virtual Demo - polymorphism
 
-            EmployeeVirtual[] employees = new EmployeeVirtual[4];
-            employees[0] = new EmployeeVirtual();
-            employees[1] = new FullTimeVirtualEmployee();
-            employees[2] = new PartTimeVirtualEmployee();
-            employees[3] = new TemporaryVirtualEmployee();
+            //EmployeeVirtual[] employees = new EmployeeVirtual[4];
+            //employees[0] = new EmployeeVirtual();
+            //employees[1] = new FullTimeVirtualEmployee();
+            //employees[2] = new PartTimeVirtualEmployee();
+            //employees[3] = new TemporaryVirtualEmployee();
 
-            foreach (var e in employees)
-            {
-                e.PrintFullName();
-            }
+            //foreach (var e in employees)
+            //{
+            //    e.PrintFullName();
+            //}
+
+            MethodOverloadingDemo methodOverloadingDemo = new MethodOverloadingDemo();
+            methodOverloadingDemo.add(10, 20,30);
         }
     }
 }
