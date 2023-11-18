@@ -74,24 +74,36 @@ namespace IntroductionToCsharp
             //float areaofcirecle = staticDemo.calculateArea();
             //Console.WriteLine("Area of circle is {0}",areaofcirecle);
 
-            Employee FTE = new FullTimeEmployee();
+            //Employee FTE = new FullTimeEmployee();
             //FullTimeEmployee FTE = new FullTimeEmployee();
-            FTE.firstname = "Neha";
-            FTE.lastname = "Gohil";
+            //FTE.firstname = "Neha";
+            //FTE.lastname = "Gohil";
             //FTE.yearlysalary = 50000;
-            FTE.PrintFullname();
+            //FTE.PrintFullname();
             //FTE.printsal();
 
-            PartTimeEmployee PTE = new PartTimeEmployee();
-            PTE.firstname = "Ramesh";
-            PTE.lastname = "Lodha";
-            PTE.hourlyRate = 300;
+            //PartTimeEmployee PTE = new PartTimeEmployee();
+            //PTE.firstname = "Ramesh";
+            //PTE.lastname = "Lodha";
+            //PTE.hourlyRate = 300;
             //Typecast
-            ((Employee)PTE).PrintFullname();
-            PTE.printsal();
+            //((Employee)PTE).PrintFullname();
+            //PTE.printsal();
 
             //ConstructorInvocationDemoChild CtorChild = new ConstructorInvocationDemoChild();
 
+            //Virtual Demo - polymorphism
+
+            EmployeeVirtual[] employees = new EmployeeVirtual[4];
+            employees[0] = new EmployeeVirtual();
+            employees[1] = new FullTimeVirtualEmployee();
+            employees[2] = new PartTimeVirtualEmployee();
+            employees[3] = new TemporaryVirtualEmployee();
+
+            foreach (var e in employees)
+            {
+                e.PrintFullName();
+            }
         }
     }
 }
