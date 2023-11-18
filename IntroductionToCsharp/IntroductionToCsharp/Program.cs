@@ -120,12 +120,24 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Pass marks is :"+marks);
             //stud.DisplayStudentDetails();
 
-            StudentPropertiesDemo stud1 = new StudentPropertiesDemo();
-            stud1.id = 101;
-            stud1.name = "Viraj";
-            Console.WriteLine(stud1.id);
-            Console.WriteLine(stud1.name);
-            Console.WriteLine(stud1.marks);
+            //StudentPropertiesDemo stud1 = new StudentPropertiesDemo();
+            //stud1.id = 101;
+            //stud1.name = "Viraj";
+            //Console.WriteLine(stud1.id);
+            //Console.WriteLine(stud1.name);
+            //Console.WriteLine(stud1.marks);
+
+            StudentStructDemo studstruct = new StudentStructDemo(1,"Viraj");
+            studstruct.PrintName();
+
+            //object initializer
+            StudentStructDemo studstruct1 = new StudentStructDemo
+            {
+                Id = 101,
+                Name = "Babloo"
+            };
+            studstruct1.PrintName();
+
         }
     }
 }
