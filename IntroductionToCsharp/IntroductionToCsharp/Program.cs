@@ -64,11 +64,15 @@ namespace IntroductionToCsharp
             //PATA.NameSpaceDemo nameSpaceDemo1 = new PATA.NameSpaceDemo();
             //nameSpaceDemo1.print();
 
-            Customer customer = new Customer("Neha","Gohil");
-            customer.PrintFullname();
+            //Customer customer = new Customer("Neha","Gohil");
+            //customer.PrintFullname();
 
-            Customer customer1 = new Customer();
-            customer1.PrintFullname();
+            //Customer customer1 = new Customer();
+            //customer1.PrintFullname();
+
+            StaticDemo staticDemo = new StaticDemo(5);
+            float areaofcirecle = staticDemo.calculateArea();
+            Console.WriteLine("Area of circle is {0}",areaofcirecle);
 
         }
     }
