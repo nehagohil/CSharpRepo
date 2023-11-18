@@ -19,7 +19,7 @@ namespace IntroductionToCsharp
             }
         }
     }
-    namespace ProjectB
+    namespace ProjectA
     {
         namespace TeamB
         {

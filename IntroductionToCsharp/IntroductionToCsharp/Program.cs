@@ -1,6 +1,6 @@
 ﻿using IntroductionToCsharp;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
-using PATB = IntroductionToCsharp.ProjectB.TeamB;
+using PATB = IntroductionToCsharp.ProjectA.TeamB;
 
 namespace IntroductionToCsharp
 {
@@ -59,10 +59,16 @@ namespace IntroductionToCsharp
             //ProjectA.TeamA.NameSpaceDemo nameSpaceDemo = new ProjectA.TeamA.NameSpaceDemo();
             //nameSpaceDemo.print();
 
-            PATB.NameSpaceDemo nameSpaceDemo = new PATB.NameSpaceDemo();
-            nameSpaceDemo.print();
-            PATA.NameSpaceDemo nameSpaceDemo1 = new PATA.NameSpaceDemo();
-            nameSpaceDemo1.print();
+            //PATB.NameSpaceDemo nameSpaceDemo = new PATB.NameSpaceDemo();
+            //nameSpaceDemo.print();
+            //PATA.NameSpaceDemo nameSpaceDemo1 = new PATA.NameSpaceDemo();
+            //nameSpaceDemo1.print();
+
+            Customer customer = new Customer("Neha","Gohil");
+            customer.PrintFullname();
+
+            Customer customer1 = new Customer();
+            customer1.PrintFullname();
 
         }
     }
