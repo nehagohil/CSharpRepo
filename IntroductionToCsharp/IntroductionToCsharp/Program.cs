@@ -34,10 +34,15 @@
             //LoopDemo loopDemo = new LoopDemo();
             //loopDemo.loopsdemo();
 
-           // MethodDemo.EvenNumbers(30);
-            MethodDemo methodDemo = new MethodDemo();
-            int result = methodDemo.sum(10,20);
-            Console.WriteLine(result);
+            // MethodDemo.EvenNumbers(30);
+            //MethodDemo methodDemo = new MethodDemo();
+            //int result = methodDemo.sum(10,20);
+            //Console.WriteLine(result);
+
+            int i = 0;
+            MethodDemo.refvalue(ref i);
+            Console.WriteLine(i);
+
         }
     }
 }

@@ -25,5 +25,10 @@ namespace IntroductionToCsharp
         {
             return fn+sn;
         }
+
+        public static void refvalue(ref int j)
+        {
+            j = 101;
+        }
     }
 }
