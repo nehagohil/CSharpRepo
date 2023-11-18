@@ -31,8 +31,13 @@
             // switchCaseDemo.SwitchDemo();
             //switchCaseDemo.GotoDemo();
 
-            LoopDemo loopDemo = new LoopDemo();
-            loopDemo.loopsdemo();
+            //LoopDemo loopDemo = new LoopDemo();
+            //loopDemo.loopsdemo();
+
+           // MethodDemo.EvenNumbers(30);
+            MethodDemo methodDemo = new MethodDemo();
+            int result = methodDemo.sum(10,20);
+            Console.WriteLine(result);
         }
     }
 }
