@@ -30,6 +30,7 @@ namespace IntroductionToCsharp
         /// </summary>
         public new void PrintFullname()
         {
+            //base.PrintFullname();
             Console.WriteLine(firstname + " " + lastname +" - Full Time");
         }
     }
