@@ -146,8 +146,12 @@ namespace IntroductionToCsharp
             //((I1)demo).interfaceMethod();
             //((I2)demo).interfaceMethod();
 
-            AbstractClassDemo absdemo = new derived();
-            absdemo.Print();
+            //AbstractClassDemo absdemo = new derived();
+            //absdemo.Print();
+
+            MultipleClassInterfaceDemo multipleClassInterfaceDemo = new MultipleClassInterfaceDemo();
+            multipleClassInterfaceDemo.AMethod();
+            multipleClassInterfaceDemo.BMethod();
         }
     }
 }
