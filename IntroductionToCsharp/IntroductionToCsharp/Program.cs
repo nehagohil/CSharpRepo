@@ -142,9 +142,12 @@ namespace IntroductionToCsharp
             //interfaceDemo.PrintMessage();
             //interfaceDemo.PrintMessagefromsecondinterface();
 
-            ExplicitInterfaceDemo demo = new ExplicitInterfaceDemo();
-            ((I1)demo).interfaceMethod();
-            ((I2)demo).interfaceMethod();
+            //ExplicitInterfaceDemo demo = new ExplicitInterfaceDemo();
+            //((I1)demo).interfaceMethod();
+            //((I2)demo).interfaceMethod();
+
+            AbstractClassDemo absdemo = new derived();
+            absdemo.Print();
         }
     }
 }
