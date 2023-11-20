@@ -233,17 +233,48 @@ namespace IntroductionToCsharp
 
             //}
 
-            try
-            {
-                throw new UserAlreadyLoggedInException("User is logged in - no duplicate session allowed");
-            }
-            catch(UserAlreadyLoggedInException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            
-            
+            // custom exception Exception demo
+            //try
+            //{
+            //    throw new UserAlreadyLoggedInException("User is logged in - no duplicate session allowed");
+            //}
+            //catch(UserAlreadyLoggedInException ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
+            //Preventing exception handling abuse
+
+            Console.WriteLine("Enter numerator");
+            int numerator;
+            bool IsValidNumerator = Int32.TryParse(Console.ReadLine(), out numerator);
+            if(IsValidNumerator)
+            {
+                Console.WriteLine("Enter denominator");
+                int denominator;
+                bool IsValiddenominator = Int32.TryParse(Console.ReadLine(), out denominator);
+
+                if(IsValiddenominator && denominator != 0)
+                {
+                    int result = numerator / denominator;
+                    Console.WriteLine("Result = {0}",result);
+                }
+                else
+                {
+                    if(denominator == 0)
+                    {
+                        Console.WriteLine("denominator can't be zero");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Denominator should be a valid number between {0} - {1}", Int32.MinValue,Int32.MaxValue);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Numerator should be a valid number between {0} - {1}", Int32.MinValue, Int32.MaxValue);
+            }
         }
     }
 }
