@@ -245,35 +245,59 @@ namespace IntroductionToCsharp
 
             //Preventing exception handling abuse
 
-            Console.WriteLine("Enter numerator");
-            int numerator;
-            bool IsValidNumerator = Int32.TryParse(Console.ReadLine(), out numerator);
-            if(IsValidNumerator)
-            {
-                Console.WriteLine("Enter denominator");
-                int denominator;
-                bool IsValiddenominator = Int32.TryParse(Console.ReadLine(), out denominator);
+            //Console.WriteLine("Enter numerator");
+            //int numerator;
+            //bool IsValidNumerator = Int32.TryParse(Console.ReadLine(), out numerator);
+            //if(IsValidNumerator)
+            //{
+            //    Console.WriteLine("Enter denominator");
+            //    int denominator;
+            //    bool IsValiddenominator = Int32.TryParse(Console.ReadLine(), out denominator);
 
-                if(IsValiddenominator && denominator != 0)
-                {
-                    int result = numerator / denominator;
-                    Console.WriteLine("Result = {0}",result);
-                }
-                else
-                {
-                    if(denominator == 0)
-                    {
-                        Console.WriteLine("denominator can't be zero");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Denominator should be a valid number between {0} - {1}", Int32.MinValue,Int32.MaxValue);
-                    }
-                }
-            }
-            else
+            //    if(IsValiddenominator && denominator != 0)
+            //    {
+            //        int result = numerator / denominator;
+            //        Console.WriteLine("Result = {0}",result);
+            //    }
+            //    else
+            //    {
+            //        if(denominator == 0)
+            //        {
+            //            Console.WriteLine("denominator can't be zero");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Denominator should be a valid number between {0} - {1}", Int32.MinValue,Int32.MaxValue);
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Numerator should be a valid number between {0} - {1}", Int32.MinValue, Int32.MaxValue);
+            //}
+
+            //Enum demo
+
+            CustomerEnumDemo[] customerEnumDemo = new CustomerEnumDemo[3];
+
+            customerEnumDemo[0] = new CustomerEnumDemo
             {
-                Console.WriteLine("Numerator should be a valid number between {0} - {1}", Int32.MinValue, Int32.MaxValue);
+                Name = "Neha",
+                Gender = Gender.female
+            };
+            customerEnumDemo[1] = new CustomerEnumDemo
+            {
+                Name = "Rocky",
+                Gender = Gender.male
+            };
+            customerEnumDemo[2] = new CustomerEnumDemo
+            {
+                Name = "Sam",
+                Gender = Gender.unknown
+            };
+            foreach (var item in customerEnumDemo)
+            {
+                Console.WriteLine("Name = {0} and Gender = {1}", item.Name, CustomerEnumDemo.GetGender(item.Gender));
             }
         }
     }
