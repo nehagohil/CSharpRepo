@@ -168,26 +168,68 @@ namespace IntroductionToCsharp
             //employeelist.Add(new EmployeeDelegateDemo() { ID = 104, Name = "Rihana", Salary = 4000, Experience = 4 });
             //EmployeeDelegateDemo.EmployeePromotion(employeelist);
 
-            StreamReader sw = null;
-            try
-            {
-                sw = new StreamReader(@"C:\sample\Data.txt");
-                Console.WriteLine(sw.ReadToEnd());
-            }
-            catch(FileNotFoundException ex)
-            {
-                Console.WriteLine("File not found");
+            //Exception Handeling demo
 
+            //StreamReader sw = null;
+            //try
+            //{
+            //    sw = new StreamReader(@"C:\sample\Data.txt");
+            //    Console.WriteLine(sw.ReadToEnd());
+            //}
+            //catch(FileNotFoundException ex)
+            //{
+            //    Console.WriteLine("File not found");
+
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+            //finally
+            //{
+            //    sw.Close();
+            //    Console.WriteLine("Finally executed");
+            //}
+
+            //Inner Exception demo
+            try
+            { 
+                try
+                {
+                    int num1, num2, result;
+                    Console.WriteLine("Enter first number");
+                    num1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter second number");
+                    num2 = Convert.ToInt32(Console.ReadLine());
+                    result = num1 / num2;
+                    Console.WriteLine("Result is = {0}", result);
+                }
+                catch(Exception ex)
+                {
+                    string filepath = @"C:\sample\log1.txt";
+                    if(File.Exists(filepath))
+                    {
+                        StreamWriter sw = new StreamWriter(filepath);
+                        sw.Write(ex.GetType().Name);
+                        Console.WriteLine();
+                        sw.Write(ex.Message);
+                        sw.Close();
+                        Console.WriteLine("There is a problem, please try later....");
+
+                    }
+                    else
+                    {
+                        throw new FileNotFoundException(filepath +" is not present",ex);
+                    }
+                }
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Current Exception is = {0} ", ex.GetType().Name);
+                Console.WriteLine("Inner Exception is = {0} ", ex.InnerException.GetType().Name);
             }
-            finally
-            {
-                sw.Close();
-                Console.WriteLine("Finally executed");
-            }
+            
+
         }
     }
 }
