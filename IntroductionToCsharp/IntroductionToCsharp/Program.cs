@@ -161,12 +161,33 @@ namespace IntroductionToCsharp
 
             //delegate usage
             //EmployeeDelegateDemo employeeDelegateDemo = new EmployeeDelegateDemo();
-            List<EmployeeDelegateDemo> employeelist = new List<EmployeeDelegateDemo>();
-            employeelist.Add(new EmployeeDelegateDemo() { ID = 101, Name = "Mary", Salary = 8000, Experience = 8 });
-            employeelist.Add(new EmployeeDelegateDemo() { ID = 102, Name = "Bosh", Salary = 5000, Experience = 5 });
-            employeelist.Add(new EmployeeDelegateDemo() { ID = 103, Name = "John", Salary = 2000, Experience = 2 });
-            employeelist.Add(new EmployeeDelegateDemo() { ID = 104, Name = "Rihana", Salary = 4000, Experience = 4 });
-            EmployeeDelegateDemo.EmployeePromotion(employeelist);
+            //List<EmployeeDelegateDemo> employeelist = new List<EmployeeDelegateDemo>();
+            //employeelist.Add(new EmployeeDelegateDemo() { ID = 101, Name = "Mary", Salary = 8000, Experience = 8 });
+            //employeelist.Add(new EmployeeDelegateDemo() { ID = 102, Name = "Bosh", Salary = 5000, Experience = 5 });
+            //employeelist.Add(new EmployeeDelegateDemo() { ID = 103, Name = "John", Salary = 2000, Experience = 2 });
+            //employeelist.Add(new EmployeeDelegateDemo() { ID = 104, Name = "Rihana", Salary = 4000, Experience = 4 });
+            //EmployeeDelegateDemo.EmployeePromotion(employeelist);
+
+            StreamReader sw = null;
+            try
+            {
+                sw = new StreamReader(@"C:\sample\Data.txt");
+                Console.WriteLine(sw.ReadToEnd());
+            }
+            catch(FileNotFoundException ex)
+            {
+                Console.WriteLine("File not found");
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                sw.Close();
+                Console.WriteLine("Finally executed");
+            }
         }
     }
 }
