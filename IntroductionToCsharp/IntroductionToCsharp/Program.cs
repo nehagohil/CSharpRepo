@@ -4,6 +4,7 @@ using PATB = IntroductionToCsharp.ProjectA.TeamB;
 
 namespace IntroductionToCsharp
 {
+    
     class Program
     {
         static void Main(string[] args)
@@ -149,9 +150,14 @@ namespace IntroductionToCsharp
             //AbstractClassDemo absdemo = new derived();
             //absdemo.Print();
 
-            MultipleClassInterfaceDemo multipleClassInterfaceDemo = new MultipleClassInterfaceDemo();
-            multipleClassInterfaceDemo.AMethod();
-            multipleClassInterfaceDemo.BMethod();
+            //MultipleClassInterfaceDemo multipleClassInterfaceDemo = new MultipleClassInterfaceDemo();
+            //multipleClassInterfaceDemo.AMethod();
+            //multipleClassInterfaceDemo.BMethod();
+
+            //basic delegate demo
+            
+            HelloDelegate del = new HelloDelegate(BasicDelegateDemo.Hello);
+            del("Hello Delegate");
         }
     }
 }
