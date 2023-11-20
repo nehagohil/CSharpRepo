@@ -192,42 +192,56 @@ namespace IntroductionToCsharp
             //}
 
             //Inner Exception demo
-            try
-            { 
-                try
-                {
-                    int num1, num2, result;
-                    Console.WriteLine("Enter first number");
-                    num1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Enter second number");
-                    num2 = Convert.ToInt32(Console.ReadLine());
-                    result = num1 / num2;
-                    Console.WriteLine("Result is = {0}", result);
-                }
-                catch(Exception ex)
-                {
-                    string filepath = @"C:\sample\log1.txt";
-                    if(File.Exists(filepath))
-                    {
-                        StreamWriter sw = new StreamWriter(filepath);
-                        sw.Write(ex.GetType().Name);
-                        Console.WriteLine();
-                        sw.Write(ex.Message);
-                        sw.Close();
-                        Console.WriteLine("There is a problem, please try later....");
+            //try
+            //{ 
+            //    try
+            //    {
+            //        int num1, num2, result;
+            //        Console.WriteLine("Enter first number");
+            //        num1 = Convert.ToInt32(Console.ReadLine());
+            //        Console.WriteLine("Enter second number");
+            //        num2 = Convert.ToInt32(Console.ReadLine());
+            //        result = num1 / num2;
+            //        Console.WriteLine("Result is = {0}", result);
+            //    }
+            //    catch(Exception ex)
+            //    {
+            //        string filepath = @"C:\sample\log1.txt";
+            //        if(File.Exists(filepath))
+            //        {
+            //            StreamWriter sw = new StreamWriter(filepath);
+            //            sw.Write(ex.GetType().Name);
+            //            Console.WriteLine();
+            //            sw.Write(ex.Message);
+            //            sw.Close();
+            //            Console.WriteLine("There is a problem, please try later....");
 
-                    }
-                    else
-                    {
-                        throw new FileNotFoundException(filepath +" is not present",ex);
-                    }
-                }
-            }
-            catch(Exception ex)
+            //        }
+            //        else
+            //        {
+            //            throw new FileNotFoundException(filepath +" is not present",ex);
+            //        }
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("Current Exception is = {0} ", ex.GetType().Name);
+            //    if(ex.InnerException != null)
+            //    {
+            //        Console.WriteLine("Inner Exception is = {0} ", ex.InnerException.GetType().Name);
+            //    }
+
+            //}
+
+            try
             {
-                Console.WriteLine("Current Exception is = {0} ", ex.GetType().Name);
-                Console.WriteLine("Inner Exception is = {0} ", ex.InnerException.GetType().Name);
+                throw new UserAlreadyLoggedInException("User is logged in - no duplicate session allowed");
             }
+            catch(UserAlreadyLoggedInException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
             
 
         }
