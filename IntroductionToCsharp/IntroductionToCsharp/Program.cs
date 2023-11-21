@@ -337,16 +337,26 @@ namespace IntroductionToCsharp
             //}
 
             //late binding demo for reflection
-            Assembly executingassembly = Assembly.GetExecutingAssembly();
-            Type customerType = executingassembly.GetType("IntroductionToCsharp.Customer");
-            object customerinstance = Activator.CreateInstance(customerType);
-            MethodInfo printFullNameMethod = customerType.GetMethod("PrintFullname");
-            string[] parameters = new string[2];
-            parameters[0] = "Neha";
-            parameters[1] = "Gohil";
+            //Assembly executingassembly = Assembly.GetExecutingAssembly();
+            //Type customerType = executingassembly.GetType("IntroductionToCsharp.Customer");
+            //object customerinstance = Activator.CreateInstance(customerType);
+            //MethodInfo printFullNameMethod = customerType.GetMethod("PrintFullname");
+            //string[] parameters = new string[2];
+            //parameters[0] = "Neha";
+            //parameters[1] = "Gohil";
 
-            string fullname = (string)printFullNameMethod.Invoke(customerinstance, parameters);
-            Console.WriteLine("Full name = {0}", fullname);
+            //string fullname = (string)printFullNameMethod.Invoke(customerinstance, parameters);
+            //Console.WriteLine("Full name = {0}", fullname);
+
+            bool IsEqual = Calculator.AreEqual<string>("Shivam", "Shivam");
+            if(IsEqual)
+            {
+                Console.WriteLine("Equal");
+            }
+            else
+            {
+                Console.WriteLine("Not Equal");
+            }
         }
     }
     
