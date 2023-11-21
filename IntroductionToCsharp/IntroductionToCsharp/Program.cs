@@ -348,15 +348,20 @@ namespace IntroductionToCsharp
             //string fullname = (string)printFullNameMethod.Invoke(customerinstance, parameters);
             //Console.WriteLine("Full name = {0}", fullname);
 
-            bool IsEqual = Calculator.AreEqual<string>("Shivam", "Shivam");
-            if(IsEqual)
-            {
-                Console.WriteLine("Equal");
-            }
-            else
-            {
-                Console.WriteLine("Not Equal");
-            }
+            //bool IsEqual = Calculator.AreEqual<string>("Shivam", "Shivam");
+            //if(IsEqual)
+            //{
+            //    Console.WriteLine("Equal");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Equal");
+            //}
+
+            CustomerToString customerToString = new CustomerToString();
+            customerToString.Firstname = "Viru";
+            customerToString.Lastname = "Gohil";
+            Console.WriteLine(Convert.ToString(customerToString));
         }
     }
     
