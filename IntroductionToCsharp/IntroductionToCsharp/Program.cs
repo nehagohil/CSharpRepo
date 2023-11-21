@@ -315,26 +315,38 @@ namespace IntroductionToCsharp
             //    Console.WriteLine(str1);
             //}
 
-            Type T = Type.GetType("IntroductionToCsharp.CustomerRefelction");
-            Console.WriteLine("Full name = {0}", T.FullName);
-            Console.WriteLine("Name is = {0}", T.Name);
-            Console.WriteLine("Namespace is = {0}", T.Namespace);
+            //reflection demo
 
-            PropertyInfo[] properties = T.GetProperties();
-            Console.WriteLine("Properties in customer");
-            foreach (var property in properties)
-            {
-                Console.WriteLine(property.Name);
-            }
+            //Type T = Type.GetType("IntroductionToCsharp.CustomerRefelction");
+            //Console.WriteLine("Full name = {0}", T.FullName);
+            //Console.WriteLine("Name is = {0}", T.Name);
+            //Console.WriteLine("Namespace is = {0}", T.Namespace);
 
-            MethodInfo[] methods = T.GetMethods();
-            Console.WriteLine("Methods in customer");
-            foreach (var method in methods)
-            {
-                Console.WriteLine(method.Name);
-            }
+            //PropertyInfo[] properties = T.GetProperties();
+            //Console.WriteLine("Properties in customer");
+            //foreach (var property in properties)
+            //{
+            //    Console.WriteLine(property.Name);
+            //}
 
+            //MethodInfo[] methods = T.GetMethods();
+            //Console.WriteLine("Methods in customer");
+            //foreach (var method in methods)
+            //{
+            //    Console.WriteLine(method.Name);
+            //}
 
+            //late binding demo for reflection
+            Assembly executingassembly = Assembly.GetExecutingAssembly();
+            Type customerType = executingassembly.GetType("IntroductionToCsharp.Customer");
+            object customerinstance = Activator.CreateInstance(customerType);
+            MethodInfo printFullNameMethod = customerType.GetMethod("PrintFullname");
+            string[] parameters = new string[2];
+            parameters[0] = "Neha";
+            parameters[1] = "Gohil";
+
+            string fullname = (string)printFullNameMethod.Invoke(customerinstance, parameters);
+            Console.WriteLine("Full name = {0}", fullname);
         }
     }
     
