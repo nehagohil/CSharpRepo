@@ -1,4 +1,5 @@
 ﻿using IntroductionToCsharp;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
@@ -302,26 +303,39 @@ namespace IntroductionToCsharp
             //}
 
             //Enum POC
-            int[] genderstr = (int[])Enum.GetValues(typeof(Genderpoc));
-            foreach (var str in genderstr)
+            //int[] genderstr = (int[])Enum.GetValues(typeof(Genderpoc));
+            //foreach (var str in genderstr)
+            //{
+            //    Console.WriteLine(str);
+            //}
+
+            //string[] genderstr1 = (string[])Enum.GetNames(typeof(Genderpoc));
+            //foreach (var str1 in genderstr1)
+            //{
+            //    Console.WriteLine(str1);
+            //}
+
+            Type T = Type.GetType("IntroductionToCsharp.CustomerRefelction");
+            Console.WriteLine("Full name = {0}", T.FullName);
+            Console.WriteLine("Name is = {0}", T.Name);
+            Console.WriteLine("Namespace is = {0}", T.Namespace);
+
+            PropertyInfo[] properties = T.GetProperties();
+            Console.WriteLine("Properties in customer");
+            foreach (var property in properties)
             {
-                Console.WriteLine(str);
+                Console.WriteLine(property.Name);
             }
 
-            string[] genderstr1 = (string[])Enum.GetNames(typeof(Genderpoc));
-            foreach (var str1 in genderstr1)
+            MethodInfo[] methods = T.GetMethods();
+            Console.WriteLine("Methods in customer");
+            foreach (var method in methods)
             {
-                Console.WriteLine(str1);
+                Console.WriteLine(method.Name);
             }
-           
+
 
         }
     }
-    public enum Genderpoc 
-    {
-        unknown,
-        male,
-        female
-
-    }
+    
 }
