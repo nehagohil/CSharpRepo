@@ -31,7 +31,7 @@ namespace IntroductionToCsharp
 
         public void SetName(string name)
         {
-           if (name == null)
+           if (string.IsNullOrEmpty(name))
             {
                 throw new Exception("Name shouldn't be null");
             }
@@ -43,7 +43,7 @@ namespace IntroductionToCsharp
         }
         public string GetName()
         {
-            return this._name;
+            return string.IsNullOrEmpty(this._name) ? "No Name" : this._name;
         }
         public int GetPassMarks()
         {
