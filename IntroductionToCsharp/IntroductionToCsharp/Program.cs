@@ -1,4 +1,5 @@
 ﻿using IntroductionToCsharp;
+using System.Security.Cryptography.X509Certificates;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
 
@@ -278,27 +279,49 @@ namespace IntroductionToCsharp
 
             //Enum demo
 
-            CustomerEnumDemo[] customerEnumDemo = new CustomerEnumDemo[3];
+            //CustomerEnumDemo[] customerEnumDemo = new CustomerEnumDemo[3];
 
-            customerEnumDemo[0] = new CustomerEnumDemo
+            //customerEnumDemo[0] = new CustomerEnumDemo
+            //{
+            //    Name = "Neha",
+            //    Gender = Gender.female
+            //};
+            //customerEnumDemo[1] = new CustomerEnumDemo
+            //{
+            //    Name = "Rocky",
+            //    Gender = Gender.male
+            //};
+            //customerEnumDemo[2] = new CustomerEnumDemo
+            //{
+            //    Name = "Sam",
+            //    Gender = Gender.unknown
+            //};
+            //foreach (var item in customerEnumDemo)
+            //{
+            //    Console.WriteLine("Name = {0} and Gender = {1}", item.Name, CustomerEnumDemo.GetGender(item.Gender));
+            //}
+
+            //Enum POC
+            int[] genderstr = (int[])Enum.GetValues(typeof(Genderpoc));
+            foreach (var str in genderstr)
             {
-                Name = "Neha",
-                Gender = Gender.female
-            };
-            customerEnumDemo[1] = new CustomerEnumDemo
-            {
-                Name = "Rocky",
-                Gender = Gender.male
-            };
-            customerEnumDemo[2] = new CustomerEnumDemo
-            {
-                Name = "Sam",
-                Gender = Gender.unknown
-            };
-            foreach (var item in customerEnumDemo)
-            {
-                Console.WriteLine("Name = {0} and Gender = {1}", item.Name, CustomerEnumDemo.GetGender(item.Gender));
+                Console.WriteLine(str);
             }
+
+            string[] genderstr1 = (string[])Enum.GetNames(typeof(Genderpoc));
+            foreach (var str1 in genderstr1)
+            {
+                Console.WriteLine(str1);
+            }
+           
+
         }
+    }
+    public enum Genderpoc 
+    {
+        unknown,
+        male,
+        female
+
     }
 }
