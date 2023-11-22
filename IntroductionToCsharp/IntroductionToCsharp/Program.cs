@@ -395,13 +395,27 @@ namespace IntroductionToCsharp
             //Console.WriteLine(userstring);
 
             //stringBuilder
-            StringBuilder userstring = new StringBuilder("C# ");
-            userstring.Append("Is ");
-            userstring.Append("a ");
-            userstring.Append("good ");
-            userstring.Append("Programming ");
-            userstring.Append("Language ");
-            Console.WriteLine(userstring);
+            //StringBuilder userstring = new StringBuilder("C# ");
+            //userstring.Append("Is ");
+            //userstring.Append("a ");
+            //userstring.Append("good ");
+            //userstring.Append("Programming ");
+            //userstring.Append("Language ");
+            //Console.WriteLine(userstring);
+
+            //partial class demo
+
+            CustomerPartialClass c2 = new CustomerPartialClass();
+            c2.Firstname = "Neha";
+            c2.Lastname = "Gohil";
+            string fullname1 = c2.GetFullName();
+            Console.WriteLine(fullname1);
+
+            PartialCustomer c1 = new PartialCustomer();
+            c1.Firstname = "Neha";
+            c1.Lastname = "Gohil";
+            string fullname = c1.GetFullName();
+            Console.WriteLine(fullname);
 
         }
     }
