@@ -11,9 +11,33 @@ namespace IntroductionToCsharp
         public string Firstname { get; set; }
         public string Lastname { get; set; }
 
-        public override string ToString()
+        //public override string ToString()
+        //{
+        //    return this.Firstname + " " + this.Lastname;
+        //}
+
+        // override object.Equals
+        public override bool Equals(object obj)
         {
-            return this.Firstname + " " + this.Lastname;
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is CustomerToString))
+            {
+                return false;
+            }
+
+
+            return this.Firstname == ((CustomerToString)obj).Firstname && this.Lastname == ((CustomerToString)obj).Lastname;
+        }
+
+        // override object.GetHashCode
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            throw new NotImplementedException();
+            return base.GetHashCode();
         }
     }
 }

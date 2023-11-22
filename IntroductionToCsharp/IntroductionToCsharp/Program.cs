@@ -370,7 +370,11 @@ namespace IntroductionToCsharp
             c1.Firstname = "Rema";
             c1.Lastname = "dey";
 
-            CustomerToString c2 = c1;
+            CustomerToString c2 = new CustomerToString();
+            c2.Firstname = "Rihana";
+            c2.Lastname = "dey";
+
+            
 
             Console.WriteLine(c1.Equals(c2));
         }
