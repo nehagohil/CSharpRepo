@@ -1,6 +1,8 @@
 ﻿using IntroductionToCsharp;
+using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
 
@@ -377,9 +379,30 @@ namespace IntroductionToCsharp
             //Console.WriteLine(c1.Equals(c2));
 
             // Difference between Convert ToString and ToString
-            CustomerToStringDiff c1 = null;
-            string str = Convert.ToString(c1);
-            Console.WriteLine(str);
+            //CustomerToStringDiff c1 = null;
+            //string str = Convert.ToString(c1);
+            //Console.WriteLine(str);
+
+            //Difference between String and StringBuilder
+
+            //string
+            //string userstring = "C# ";
+            //userstring += "Is ";
+            //userstring += "a ";
+            //userstring += "good ";
+            //userstring += "Programming ";
+            //userstring += "Language ";
+            //Console.WriteLine(userstring);
+
+            //stringBuilder
+            StringBuilder userstring = new StringBuilder("C# ");
+            userstring.Append("Is ");
+            userstring.Append("a ");
+            userstring.Append("good ");
+            userstring.Append("Programming ");
+            userstring.Append("Language ");
+            Console.WriteLine(userstring);
+
         }
     }
     
