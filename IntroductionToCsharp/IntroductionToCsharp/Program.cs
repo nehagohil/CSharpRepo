@@ -366,17 +366,20 @@ namespace IntroductionToCsharp
             //Console.WriteLine(Convert.ToString(customerToString));
 
             // override equal method 
-            CustomerToString c1 = new CustomerToString();
-            c1.Firstname = "Rema";
-            c1.Lastname = "dey";
+            //CustomerToString c1 = new CustomerToString();
+            //c1.Firstname = "Rema";
+            //c1.Lastname = "dey";
 
-            CustomerToString c2 = new CustomerToString();
-            c2.Firstname = "Rihana";
-            c2.Lastname = "dey";
+            //CustomerToString c2 = new CustomerToString();
+            //c2.Firstname = "Rihana";
+            //c2.Lastname = "dey";
 
-            
+            //Console.WriteLine(c1.Equals(c2));
 
-            Console.WriteLine(c1.Equals(c2));
+            // Difference between Convert ToString and ToString
+            CustomerToStringDiff c1 = null;
+            string str = Convert.ToString(c1);
+            Console.WriteLine(str);
         }
     }
     
