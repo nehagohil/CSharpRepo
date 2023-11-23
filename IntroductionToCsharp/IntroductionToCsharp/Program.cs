@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
+using System.Runtime.InteropServices;
 
 namespace IntroductionToCsharp
 {
@@ -442,7 +443,9 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Total male employees " + companyIndexer["female"]);
 
             //Program.addNumbers(10,20, new int[] {10,20});
-            Program.Test(50,c:150);
+            //Program.Test(50,c:150);
+           // Program.addNumbers(10, 20, new int[] { 10, 20 });
+            Program.addNumbers(10, 20);
         }
 
         //public static void addNumbers(int fnum, int snum)
@@ -462,15 +465,27 @@ namespace IntroductionToCsharp
         //    }
         //    Console.WriteLine("Addition is :" + result);
         //}
-        public static void Test(int a=10, int b=20, int c=30)
+        //public static void Test(int a=10, int b=20, int c=30)
+        //{
+        //    Console.WriteLine("A is " +a);
+        //    Console.WriteLine("B is " +b);
+        //    Console.WriteLine("C is " +c);
+        //}
+        public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
         {
-            Console.WriteLine("A is " +a);
-            Console.WriteLine("B is " +b);
-            Console.WriteLine("C is " +c);
-        }
-        
+            int result = fnum + snum;
+            if (nums != null)
+            {
+                foreach (int i in nums)
+                {
+                    result += i;
+                }
 
-        
+            }
+            Console.WriteLine("Addition is :" + result);
+        }
+
+
     }
-    
+
 }
