@@ -477,20 +477,64 @@ namespace IntroductionToCsharp
             //customer[1] = cust2;
             //customer[2] = cust3;
 
-            List<Customr> customer = new List<Customr>();
+            List<Customr> customer = new List<Customr>(2);
             customer.Add(cust1);
             customer.Add(cust2);
             customer.Add(cust3);
-            Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
 
-            foreach (KeyValuePair<int,Customr> kvp in dict)
-            {
-                Console.WriteLine("Key is : "+kvp.Key);
-                Customr cust = kvp.Value;
-                Console.WriteLine("Id is = "+ cust.Id);
-                Console.WriteLine("Name is = " + cust.Name);
-                Console.WriteLine("Salary is = " + cust.salary);
-            }
+            int index = customer.FindLastIndex(2, cust => cust.salary > 5000);
+            Console.WriteLine(index);
+
+            //int index = customer.FindIndex(2,cust => cust.salary > 5000);
+            //Console.WriteLine(index);
+
+            //List<Customr> cust = customer.FindAll(cust => cust.salary > 5000);
+            //foreach (var c in cust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+
+            //Customr c = customer.FindLast(cust => cust.salary > 5000);
+            //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+
+            //Customr c = customer.Find(cust => cust.salary > 5000);
+            //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+
+            //if (customer.Exists(cust => cust.Name.StartsWith("P")))
+            //{
+            //    Console.WriteLine("object does exists...");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("object does not exists...");
+            //}
+            // customer.Insert(0, cust2);
+
+            //Console.WriteLine(customer.IndexOf(cust2));
+            //if (customer.Contains(cust3))
+            //{
+            //    Console.WriteLine("object does exists...");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("object does not exists...");
+            //}
+
+            //foreach (Customr c in customer)
+            //{
+            //    Console.WriteLine(c.Id);
+            //}
+
+            // Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
+
+            //foreach (KeyValuePair<int,Customr> kvp in dict)
+            //{
+            //    Console.WriteLine("Key is : "+kvp.Key);
+            //    Customr cust = kvp.Value;
+            //    Console.WriteLine("Id is = "+ cust.Id);
+            //    Console.WriteLine("Name is = " + cust.Name);
+            //    Console.WriteLine("Salary is = " + cust.salary);
+            //}
 
 
             //Console.WriteLine("The Count of customer is = " +customerDictionary.Count(kvp => kvp.Value.salary > 6000));
@@ -539,7 +583,7 @@ namespace IntroductionToCsharp
         //        {
         //            result += i;
         //        }
-                
+
         //    }
         //    Console.WriteLine("Addition is :" + result);
         //}
