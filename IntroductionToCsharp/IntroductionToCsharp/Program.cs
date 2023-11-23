@@ -432,14 +432,30 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Employee name with id 2 is :" + companyIndexer[2]);
             //Console.WriteLine("Employee name with id 3 is :" + companyIndexer[3]);
 
-            CompanyIndexer companyIndexer = new CompanyIndexer();
-            Console.WriteLine("Before update");
-            Console.WriteLine("Total male employees "+ companyIndexer["male"]);
-            Console.WriteLine("Total male employees " + companyIndexer["female"]);
-            companyIndexer["male"] = "female";
-            Console.WriteLine("After update");
-            Console.WriteLine("Total male employees " + companyIndexer["male"]);
-            Console.WriteLine("Total male employees " + companyIndexer["female"]);
+            //CompanyIndexer companyIndexer = new CompanyIndexer();
+            //Console.WriteLine("Before update");
+            //Console.WriteLine("Total male employees "+ companyIndexer["male"]);
+            //Console.WriteLine("Total male employees " + companyIndexer["female"]);
+            //companyIndexer["male"] = "female";
+            //Console.WriteLine("After update");
+            //Console.WriteLine("Total male employees " + companyIndexer["male"]);
+            //Console.WriteLine("Total male employees " + companyIndexer["female"]);
+
+            Program.addNumbers(10,20,30,40,50);
+        }
+
+        public static void addNumbers(int fnum, int snum, params object[] nums)
+        {
+            int result = fnum + snum;
+            if(nums != null)
+            {
+                foreach (int i in nums)
+                {
+                    result += i;
+                }
+                
+            }
+            Console.WriteLine("Addition is :" + result);
         }
     }
     
