@@ -441,14 +441,14 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Total male employees " + companyIndexer["male"]);
             //Console.WriteLine("Total male employees " + companyIndexer["female"]);
 
-            Program.addNumbers(10,20);
+            Program.addNumbers(10,20, new int[] {10,20});
         }
 
-        public static void addNumbers(int fnum, int snum)
-        {
-            Program.addNumbers(fnum,snum,null);
-        }
-        public static void addNumbers(int fnum, int snum, params object[] nums)
+        //public static void addNumbers(int fnum, int snum)
+        //{
+        //    Program.addNumbers(fnum,snum,null);
+        //}
+        public static void addNumbers(int fnum, int snum, int[] nums = null)
         {
             int result = fnum + snum;
             if(nums != null)
