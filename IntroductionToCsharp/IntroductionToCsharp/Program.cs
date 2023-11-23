@@ -405,17 +405,21 @@ namespace IntroductionToCsharp
 
             //partial class demo
 
-            CustomerPartialClass c2 = new CustomerPartialClass();
-            c2.Firstname = "Neha";
-            c2.Lastname = "Gohil";
-            string fullname1 = c2.GetFullName();
-            Console.WriteLine(fullname1);
+            //CustomerPartialClass c2 = new CustomerPartialClass();
+            //c2.Firstname = "Neha";
+            //c2.Lastname = "Gohil";
+            //string fullname1 = c2.GetFullName();
+            //Console.WriteLine(fullname1);
 
-            PartialCustomer c1 = new PartialCustomer();
-            c1.Firstname = "Neha";
-            c1.Lastname = "Gohil";
-            string fullname = c1.GetFullName();
-            Console.WriteLine(fullname);
+            //PartialCustomer c1 = new PartialCustomer();
+            //c1.Firstname = "Neha";
+            //c1.Lastname = "Gohil";
+            //string fullname = c1.GetFullName();
+            //Console.WriteLine(fullname);
+
+            //partial method demo
+            PartialMethodClass1 PMC = new PartialMethodClass1();
+            PMC.PrintMessage();
 
         }
     }
