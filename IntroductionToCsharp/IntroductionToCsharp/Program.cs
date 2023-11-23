@@ -472,10 +472,15 @@ namespace IntroductionToCsharp
             //customerDictionary.Add(cust2.Id, cust2);
             //customerDictionary.Add(cust3.Id, cust3);
 
-            Customr[] customer = new Customr[3];
-            customer[0] = cust1;
-            customer[1] = cust2;
-            customer[2] = cust3;
+            //Customr[] customer = new Customr[3];
+            //customer[0] = cust1;
+            //customer[1] = cust2;
+            //customer[2] = cust3;
+
+            List<Customr> customer = new List<Customr>();
+            customer.Add(cust1);
+            customer.Add(cust2);
+            customer.Add(cust3);
             Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
 
             foreach (KeyValuePair<int,Customr> kvp in dict)
