@@ -448,24 +448,24 @@ namespace IntroductionToCsharp
             // Program.addNumbers(10, 20, new int[] { 10, 20 });
             // Program.addNumbers(10, 20);
 
-            Customr cust1 = new Customr()
-            {
-                Id = 101,
-                Name = "Roma",
-                salary = 5000
-            };
-            Customr cust2 = new Customr()
-            {
-                Id = 102,
-                Name = "Rima",
-                salary = 6000
-            };
-            Customr cust3 = new Customr()
-            {
-                Id = 103,
-                Name = "Rihana",
-                salary = 7000
-            };
+            //Customr cust1 = new Customr()
+            //{
+            //    Id = 101,
+            //    Name = "Roma",
+            //    salary = 5000
+            //};
+            //Customr cust2 = new Customr()
+            //{
+            //    Id = 102,
+            //    Name = "Rima",
+            //    salary = 6000
+            //};
+            //Customr cust3 = new Customr()
+            //{
+            //    Id = 103,
+            //    Name = "Rihana",
+            //    salary = 7000
+            //};
 
             //Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
             //customerDictionary.Add(cust1.Id, cust1);
@@ -477,13 +477,13 @@ namespace IntroductionToCsharp
             //customer[1] = cust2;
             //customer[2] = cust3;
 
-            List<Customr> customer = new List<Customr>(2);
-            customer.Add(cust1);
-            customer.Add(cust2);
-            customer.Add(cust3);
+            //List<Customr> customer = new List<Customr>(2);
+            //customer.Add(cust1);
+            //customer.Add(cust2);
+            //customer.Add(cust3);
 
-            int index = customer.FindLastIndex(2, cust => cust.salary > 5000);
-            Console.WriteLine(index);
+            //int index = customer.FindLastIndex(2, cust => cust.salary > 5000);
+            //Console.WriteLine(index);
 
             //int index = customer.FindIndex(2,cust => cust.salary > 5000);
             //Console.WriteLine(index);
@@ -566,6 +566,70 @@ namespace IntroductionToCsharp
             //foreach(Customr cust in customerDictionary.Values)
             //{
             //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            //}
+
+            customerr cust1 = new customerr()
+            {
+                Id = 101,
+                Name = "Roma",
+                salary = 5000,
+                Type = "Retail"
+            };
+            customerr cust2 = new customerr()
+            {
+                Id = 102,
+                Name = "Rima",
+                salary = 6000,
+                Type = "Retail"
+            };
+            customerr cust3 = new customerr()
+            {
+                Id = 103,
+                Name = "Rihana",
+                salary = 7000,
+                Type = "Retail"
+            };
+            customerr cust4 = new customerr()
+            {
+                Id = 104,
+                Name = "Anil",
+                salary = 9000,
+                Type = "Corporate"
+            };
+            customerr cust5 = new customerr()
+            {
+                Id = 105,
+                Name = "Sunil",
+                salary = 12000,
+                Type = "Corporate"
+            };
+
+            List<customerr> listcust = new List<customerr>();
+            listcust.Add(cust1);
+            listcust.Add(cust2);
+            listcust.Add(cust3);
+
+            List<customerr> listcorporatecust = new List<customerr>();
+            listcorporatecust.Add(cust4);
+            listcorporatecust.Add(cust5);
+
+            listcust.InsertRange(3, listcorporatecust);
+            foreach (customerr c in listcust)
+            {
+                Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
+            }
+
+            //List<customerr> listcust1= listcust.GetRange(3, 2);
+            //foreach (customerr c in listcust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
+            //}
+
+            //listcust.AddRange(listcorporatecust);
+
+            //foreach (customerr c in listcust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
             //}
 
         }
