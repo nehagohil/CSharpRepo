@@ -471,15 +471,18 @@ namespace IntroductionToCsharp
             customerDictionary.Add(cust1.Id, cust1);
             customerDictionary.Add(cust2.Id, cust2);
             customerDictionary.Add(cust3.Id, cust3);
-            Customr cust;
-            if(customerDictionary.TryGetValue(104, out cust))
-            {
-                Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
-            }
-            else
-            {
-                Console.WriteLine("This key is not exists");
-            }
+
+            Console.WriteLine("The Count of customer is = " +customerDictionary.Count(kvp => kvp.Value.salary > 6000));
+
+            //Customr cust;
+            //if(customerDictionary.TryGetValue(104, out cust))
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("This key is not exists");
+            //}
 
             //Customr customr102 = customerDictionary[102];
             //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", customr102.Id,customr102.Name,customr102.salary);
