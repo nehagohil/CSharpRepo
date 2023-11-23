@@ -471,6 +471,15 @@ namespace IntroductionToCsharp
             customerDictionary.Add(cust1.Id, cust1);
             customerDictionary.Add(cust2.Id, cust2);
             customerDictionary.Add(cust3.Id, cust3);
+            Customr cust;
+            if(customerDictionary.TryGetValue(104, out cust))
+            {
+                Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            }
+            else
+            {
+                Console.WriteLine("This key is not exists");
+            }
 
             //Customr customr102 = customerDictionary[102];
             //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", customr102.Id,customr102.Name,customr102.salary);
@@ -482,14 +491,15 @@ namespace IntroductionToCsharp
             //    Console.WriteLine("Name = {0}", cust.Name);
             //    Console.WriteLine("Salary = {0}", cust.salary);
             //}
-            foreach(int key in customerDictionary.Keys)
-            {
-                Console.WriteLine(key);
-            }
-            foreach(Customr cust in customerDictionary.Values)
-            {
-                Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
-            }
+            //foreach(int key in customerDictionary.Keys)
+            //{
+            //    Console.WriteLine(key);
+            //}
+            //foreach(Customr cust in customerDictionary.Values)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            //}
+
         }
 
         //public static void addNumbers(int fnum, int snum)
