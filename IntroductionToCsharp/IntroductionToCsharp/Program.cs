@@ -418,9 +418,19 @@ namespace IntroductionToCsharp
             //Console.WriteLine(fullname);
 
             //partial method demo
-            PartialMethodClass1 PMC = new PartialMethodClass1();
-            PMC.PrintMessage();
+            //PartialMethodClass1 PMC = new PartialMethodClass1();
+            //PMC.PrintMessage();
 
+            CompanyIndexer companyIndexer = new CompanyIndexer();
+            Console.WriteLine("Employee name with id 2 is :" + companyIndexer[2]);
+            Console.WriteLine("Employee name with id 3 is :" + companyIndexer[3]);
+            Console.WriteLine("Employee name with id 4 is :" + companyIndexer[4]);
+
+            Console.WriteLine("After changing the names");
+            companyIndexer[2] = "Neha";
+            companyIndexer[3] = "Shivam";
+            Console.WriteLine("Employee name with id 2 is :" + companyIndexer[2]);
+            Console.WriteLine("Employee name with id 3 is :" + companyIndexer[3]);
         }
     }
     
