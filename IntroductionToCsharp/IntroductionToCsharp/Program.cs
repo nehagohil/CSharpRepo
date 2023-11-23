@@ -604,20 +604,20 @@ namespace IntroductionToCsharp
                 Type = "Corporate"
             };
 
-            List<customerr> listcust = new List<customerr>();
-            listcust.Add(cust1);
-            listcust.Add(cust2);
-            listcust.Add(cust3);
+            //List<customerr> listcust = new List<customerr>();
+            //listcust.Add(cust1);
+            //listcust.Add(cust2);
+            //listcust.Add(cust3);
 
-            List<customerr> listcorporatecust = new List<customerr>();
-            listcorporatecust.Add(cust4);
-            listcorporatecust.Add(cust5);
+            //List<customerr> listcorporatecust = new List<customerr>();
+            //listcorporatecust.Add(cust4);
+            //listcorporatecust.Add(cust5);
 
-            listcust.InsertRange(3, listcorporatecust);
-            foreach (customerr c in listcust)
-            {
-                Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
-            }
+            //listcust.InsertRange(3, listcorporatecust);
+            //foreach (customerr c in listcust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
+            //}
 
             //List<customerr> listcust1= listcust.GetRange(3, 2);
             //foreach (customerr c in listcust)
@@ -632,6 +632,24 @@ namespace IntroductionToCsharp
             //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
             //}
 
+            List<int> numbers = new List<int> {1,4,8,10,2,6,3,5,7,9 };
+            Console.WriteLine("before sorting..");
+            foreach (int i  in numbers)
+            {
+                Console.WriteLine(i);
+            }
+            numbers.Sort();
+            Console.WriteLine("After sorting..");
+            foreach (int i in numbers)
+            {
+                Console.WriteLine(i);
+            }
+            numbers.Reverse();
+            Console.WriteLine("After sorting..");
+            foreach (int i in numbers)
+            {
+                Console.WriteLine(i);
+            }
         }
 
         //public static void addNumbers(int fnum, int snum)
