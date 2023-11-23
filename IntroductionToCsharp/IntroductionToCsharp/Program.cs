@@ -6,6 +6,7 @@ using System.Text;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
 using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 namespace IntroductionToCsharp
 {
@@ -444,8 +445,51 @@ namespace IntroductionToCsharp
 
             //Program.addNumbers(10,20, new int[] {10,20});
             //Program.Test(50,c:150);
-           // Program.addNumbers(10, 20, new int[] { 10, 20 });
-            Program.addNumbers(10, 20);
+            // Program.addNumbers(10, 20, new int[] { 10, 20 });
+            // Program.addNumbers(10, 20);
+
+            Customr cust1 = new Customr()
+            {
+                Id = 101,
+                Name = "Roma",
+                salary = 5000
+            };
+            Customr cust2 = new Customr()
+            {
+                Id = 102,
+                Name = "Rima",
+                salary = 6000
+            };
+            Customr cust3 = new Customr()
+            {
+                Id = 103,
+                Name = "Rihana",
+                salary = 7000
+            };
+
+            Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
+            customerDictionary.Add(cust1.Id, cust1);
+            customerDictionary.Add(cust2.Id, cust2);
+            customerDictionary.Add(cust3.Id, cust3);
+
+            //Customr customr102 = customerDictionary[102];
+            //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", customr102.Id,customr102.Name,customr102.salary);
+            //foreach(KeyValuePair<int,Customr> custkeyvaluedictionary in customerDictionary)
+            //{
+            //    Console.WriteLine("Key = {0}", custkeyvaluedictionary.Key);
+            //   Customr cust = custkeyvaluedictionary.Value;
+            //    Console.WriteLine("Id = {0}",cust.Id);
+            //    Console.WriteLine("Name = {0}", cust.Name);
+            //    Console.WriteLine("Salary = {0}", cust.salary);
+            //}
+            foreach(int key in customerDictionary.Keys)
+            {
+                Console.WriteLine(key);
+            }
+            foreach(Customr cust in customerDictionary.Values)
+            {
+                Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            }
         }
 
         //public static void addNumbers(int fnum, int snum)
@@ -471,19 +515,19 @@ namespace IntroductionToCsharp
         //    Console.WriteLine("B is " +b);
         //    Console.WriteLine("C is " +c);
         //}
-        public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
-        {
-            int result = fnum + snum;
-            if (nums != null)
-            {
-                foreach (int i in nums)
-                {
-                    result += i;
-                }
+        //public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
+        //{
+        //    int result = fnum + snum;
+        //    if (nums != null)
+        //    {
+        //        foreach (int i in nums)
+        //        {
+        //            result += i;
+        //        }
 
-            }
-            Console.WriteLine("Addition is :" + result);
-        }
+        //    }
+        //    Console.WriteLine("Addition is :" + result);
+        //}
 
 
     }
