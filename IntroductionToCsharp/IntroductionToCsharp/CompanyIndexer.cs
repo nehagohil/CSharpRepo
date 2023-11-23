@@ -39,5 +39,22 @@ namespace IntroductionToCsharp
                 ListEmployees.FirstOrDefault(emp => emp.EmployeeId == id).Name = value;
             }
         }
+        public string this[string gender]
+        {
+            get
+            {
+                return ListEmployees.Count(emp => emp.Gender == gender).ToString();
+            }
+            set
+            {
+                foreach (var employee in ListEmployees)
+                {
+                    if(employee.Gender == gender)
+                    {
+                        employee.Gender = value;
+                    }
+                }
+            }
+        }
     }
 }
