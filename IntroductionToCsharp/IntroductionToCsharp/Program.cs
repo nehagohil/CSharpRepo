@@ -441,26 +441,36 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Total male employees " + companyIndexer["male"]);
             //Console.WriteLine("Total male employees " + companyIndexer["female"]);
 
-            Program.addNumbers(10,20, new int[] {10,20});
+            //Program.addNumbers(10,20, new int[] {10,20});
+            Program.Test(50,c:150);
         }
 
         //public static void addNumbers(int fnum, int snum)
         //{
         //    Program.addNumbers(fnum,snum,null);
         //}
-        public static void addNumbers(int fnum, int snum, int[] nums = null)
-        {
-            int result = fnum + snum;
-            if(nums != null)
-            {
-                foreach (int i in nums)
-                {
-                    result += i;
-                }
+        //public static void addNumbers(int fnum, int snum, int[] nums = null)
+        //{
+        //    int result = fnum + snum;
+        //    if(nums != null)
+        //    {
+        //        foreach (int i in nums)
+        //        {
+        //            result += i;
+        //        }
                 
-            }
-            Console.WriteLine("Addition is :" + result);
+        //    }
+        //    Console.WriteLine("Addition is :" + result);
+        //}
+        public static void Test(int a=10, int b=20, int c=30)
+        {
+            Console.WriteLine("A is " +a);
+            Console.WriteLine("B is " +b);
+            Console.WriteLine("C is " +c);
         }
+        
+
+        
     }
     
 }
