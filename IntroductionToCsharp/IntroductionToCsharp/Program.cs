@@ -467,12 +467,28 @@ namespace IntroductionToCsharp
                 salary = 7000
             };
 
-            Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
-            customerDictionary.Add(cust1.Id, cust1);
-            customerDictionary.Add(cust2.Id, cust2);
-            customerDictionary.Add(cust3.Id, cust3);
+            //Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
+            //customerDictionary.Add(cust1.Id, cust1);
+            //customerDictionary.Add(cust2.Id, cust2);
+            //customerDictionary.Add(cust3.Id, cust3);
 
-            Console.WriteLine("The Count of customer is = " +customerDictionary.Count(kvp => kvp.Value.salary > 6000));
+            Customr[] customer = new Customr[3];
+            customer[0] = cust1;
+            customer[1] = cust2;
+            customer[2] = cust3;
+            Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
+
+            foreach (KeyValuePair<int,Customr> kvp in dict)
+            {
+                Console.WriteLine("Key is : "+kvp.Key);
+                Customr cust = kvp.Value;
+                Console.WriteLine("Id is = "+ cust.Id);
+                Console.WriteLine("Name is = " + cust.Name);
+                Console.WriteLine("Salary is = " + cust.salary);
+            }
+
+
+            //Console.WriteLine("The Count of customer is = " +customerDictionary.Count(kvp => kvp.Value.salary > 6000));
 
             //Customr cust;
             //if(customerDictionary.TryGetValue(104, out cust))
