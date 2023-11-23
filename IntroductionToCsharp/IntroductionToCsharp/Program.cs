@@ -1,8 +1,12 @@
 ﻿using IntroductionToCsharp;
+using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
+using System.Runtime.InteropServices;
+using System.Xml.Linq;
 
 namespace IntroductionToCsharp
 {
@@ -315,27 +319,246 @@ namespace IntroductionToCsharp
             //    Console.WriteLine(str1);
             //}
 
-            Type T = Type.GetType("IntroductionToCsharp.CustomerRefelction");
-            Console.WriteLine("Full name = {0}", T.FullName);
-            Console.WriteLine("Name is = {0}", T.Name);
-            Console.WriteLine("Namespace is = {0}", T.Namespace);
+            //reflection demo
 
-            PropertyInfo[] properties = T.GetProperties();
-            Console.WriteLine("Properties in customer");
-            foreach (var property in properties)
+            //Type T = Type.GetType("IntroductionToCsharp.CustomerRefelction");
+            //Console.WriteLine("Full name = {0}", T.FullName);
+            //Console.WriteLine("Name is = {0}", T.Name);
+            //Console.WriteLine("Namespace is = {0}", T.Namespace);
+
+            //PropertyInfo[] properties = T.GetProperties();
+            //Console.WriteLine("Properties in customer");
+            //foreach (var property in properties)
+            //{
+            //    Console.WriteLine(property.Name);
+            //}
+
+            //MethodInfo[] methods = T.GetMethods();
+            //Console.WriteLine("Methods in customer");
+            //foreach (var method in methods)
+            //{
+            //    Console.WriteLine(method.Name);
+            //}
+
+            //late binding demo for reflection
+            //Assembly executingassembly = Assembly.GetExecutingAssembly();
+            //Type customerType = executingassembly.GetType("IntroductionToCsharp.Customer");
+            //object customerinstance = Activator.CreateInstance(customerType);
+            //MethodInfo printFullNameMethod = customerType.GetMethod("PrintFullname");
+            //string[] parameters = new string[2];
+            //parameters[0] = "Neha";
+            //parameters[1] = "Gohil";
+
+            //string fullname = (string)printFullNameMethod.Invoke(customerinstance, parameters);
+            //Console.WriteLine("Full name = {0}", fullname);
+
+            //bool IsEqual = Calculator.AreEqual<string>("Shivam", "Shivam");
+            //if(IsEqual)
+            //{
+            //    Console.WriteLine("Equal");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Equal");
+            //}
+
+            //override ToString method
+
+            //CustomerToString customerToString = new CustomerToString();
+            //customerToString.Firstname = "Viru";
+            //customerToString.Lastname = "Gohil";
+            //Console.WriteLine(Convert.ToString(customerToString));
+
+            // override equal method 
+            //CustomerToString c1 = new CustomerToString();
+            //c1.Firstname = "Rema";
+            //c1.Lastname = "dey";
+
+            //CustomerToString c2 = new CustomerToString();
+            //c2.Firstname = "Rihana";
+            //c2.Lastname = "dey";
+
+            //Console.WriteLine(c1.Equals(c2));
+
+            // Difference between Convert ToString and ToString
+            //CustomerToStringDiff c1 = null;
+            //string str = Convert.ToString(c1);
+            //Console.WriteLine(str);
+
+            //Difference between String and StringBuilder
+
+            //string
+            //string userstring = "C# ";
+            //userstring += "Is ";
+            //userstring += "a ";
+            //userstring += "good ";
+            //userstring += "Programming ";
+            //userstring += "Language ";
+            //Console.WriteLine(userstring);
+
+            //stringBuilder
+            //StringBuilder userstring = new StringBuilder("C# ");
+            //userstring.Append("Is ");
+            //userstring.Append("a ");
+            //userstring.Append("good ");
+            //userstring.Append("Programming ");
+            //userstring.Append("Language ");
+            //Console.WriteLine(userstring);
+
+            //partial class demo
+
+            //CustomerPartialClass c2 = new CustomerPartialClass();
+            //c2.Firstname = "Neha";
+            //c2.Lastname = "Gohil";
+            //string fullname1 = c2.GetFullName();
+            //Console.WriteLine(fullname1);
+
+            //PartialCustomer c1 = new PartialCustomer();
+            //c1.Firstname = "Neha";
+            //c1.Lastname = "Gohil";
+            //string fullname = c1.GetFullName();
+            //Console.WriteLine(fullname);
+
+            //partial method demo
+            //PartialMethodClass1 PMC = new PartialMethodClass1();
+            //PMC.PrintMessage();
+
+            //CompanyIndexer companyIndexer = new CompanyIndexer();
+            //Console.WriteLine("Employee name with id 2 is :" + companyIndexer[2]);
+            //Console.WriteLine("Employee name with id 3 is :" + companyIndexer[3]);
+            //Console.WriteLine("Employee name with id 4 is :" + companyIndexer[4]);
+
+            //Console.WriteLine("After changing the names");
+            //companyIndexer[2] = "Neha";
+            //companyIndexer[3] = "Shivam";
+            //Console.WriteLine("Employee name with id 2 is :" + companyIndexer[2]);
+            //Console.WriteLine("Employee name with id 3 is :" + companyIndexer[3]);
+
+            //CompanyIndexer companyIndexer = new CompanyIndexer();
+            //Console.WriteLine("Before update");
+            //Console.WriteLine("Total male employees "+ companyIndexer["male"]);
+            //Console.WriteLine("Total male employees " + companyIndexer["female"]);
+            //companyIndexer["male"] = "female";
+            //Console.WriteLine("After update");
+            //Console.WriteLine("Total male employees " + companyIndexer["male"]);
+            //Console.WriteLine("Total male employees " + companyIndexer["female"]);
+
+            //Program.addNumbers(10,20, new int[] {10,20});
+            //Program.Test(50,c:150);
+            // Program.addNumbers(10, 20, new int[] { 10, 20 });
+            // Program.addNumbers(10, 20);
+
+            Customr cust1 = new Customr()
             {
-                Console.WriteLine(property.Name);
+                Id = 101,
+                Name = "Roma",
+                salary = 5000
+            };
+            Customr cust2 = new Customr()
+            {
+                Id = 102,
+                Name = "Rima",
+                salary = 6000
+            };
+            Customr cust3 = new Customr()
+            {
+                Id = 103,
+                Name = "Rihana",
+                salary = 7000
+            };
+
+            //Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
+            //customerDictionary.Add(cust1.Id, cust1);
+            //customerDictionary.Add(cust2.Id, cust2);
+            //customerDictionary.Add(cust3.Id, cust3);
+
+            Customr[] customer = new Customr[3];
+            customer[0] = cust1;
+            customer[1] = cust2;
+            customer[2] = cust3;
+            Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
+
+            foreach (KeyValuePair<int,Customr> kvp in dict)
+            {
+                Console.WriteLine("Key is : "+kvp.Key);
+                Customr cust = kvp.Value;
+                Console.WriteLine("Id is = "+ cust.Id);
+                Console.WriteLine("Name is = " + cust.Name);
+                Console.WriteLine("Salary is = " + cust.salary);
             }
 
-            MethodInfo[] methods = T.GetMethods();
-            Console.WriteLine("Methods in customer");
-            foreach (var method in methods)
-            {
-                Console.WriteLine(method.Name);
-            }
 
+            //Console.WriteLine("The Count of customer is = " +customerDictionary.Count(kvp => kvp.Value.salary > 6000));
+
+            //Customr cust;
+            //if(customerDictionary.TryGetValue(104, out cust))
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("This key is not exists");
+            //}
+
+            //Customr customr102 = customerDictionary[102];
+            //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", customr102.Id,customr102.Name,customr102.salary);
+            //foreach(KeyValuePair<int,Customr> custkeyvaluedictionary in customerDictionary)
+            //{
+            //    Console.WriteLine("Key = {0}", custkeyvaluedictionary.Key);
+            //   Customr cust = custkeyvaluedictionary.Value;
+            //    Console.WriteLine("Id = {0}",cust.Id);
+            //    Console.WriteLine("Name = {0}", cust.Name);
+            //    Console.WriteLine("Salary = {0}", cust.salary);
+            //}
+            //foreach(int key in customerDictionary.Keys)
+            //{
+            //    Console.WriteLine(key);
+            //}
+            //foreach(Customr cust in customerDictionary.Values)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
+            //}
 
         }
+
+        //public static void addNumbers(int fnum, int snum)
+        //{
+        //    Program.addNumbers(fnum,snum,null);
+        //}
+        //public static void addNumbers(int fnum, int snum, int[] nums = null)
+        //{
+        //    int result = fnum + snum;
+        //    if(nums != null)
+        //    {
+        //        foreach (int i in nums)
+        //        {
+        //            result += i;
+        //        }
+                
+        //    }
+        //    Console.WriteLine("Addition is :" + result);
+        //}
+        //public static void Test(int a=10, int b=20, int c=30)
+        //{
+        //    Console.WriteLine("A is " +a);
+        //    Console.WriteLine("B is " +b);
+        //    Console.WriteLine("C is " +c);
+        //}
+        //public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
+        //{
+        //    int result = fnum + snum;
+        //    if (nums != null)
+        //    {
+        //        foreach (int i in nums)
+        //        {
+        //            result += i;
+        //        }
+
+        //    }
+        //    Console.WriteLine("Addition is :" + result);
+        //}
+
+
     }
-    
+
 }

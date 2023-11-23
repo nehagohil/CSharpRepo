@@ -11,25 +11,28 @@ namespace IntroductionToCsharp
         string _firstname;
         string _lastname;
 
-        public Customer(): this("No firstname","No lastname")
+        //public Customer(): this("No firstname","No lastname")
+        //{
+
+        //}
+        //public Customer(string firstname, string lastname)
+        //{
+        //    this._firstname = firstname;
+        //    this._lastname = lastname;
+        //}
+
+        //~Customer()
+        //{
+
+        //}
+        public void PrintFullname(string firstname, string lastname)
         {
 
+            Console.WriteLine("FullName is {0}", firstname + " " + lastname);
         }
-        public Customer(string firstname, string lastname)
-        {
-            this._firstname = firstname;
-            this._lastname = lastname;
-        }
-
-        ~Customer()
-        {
-
-        }
-    public void PrintFullname()
-    {
-            Console.WriteLine("FullName is {0}", this._firstname +" "+ this._lastname);
     }
+    
 
        
    }
-}
+
