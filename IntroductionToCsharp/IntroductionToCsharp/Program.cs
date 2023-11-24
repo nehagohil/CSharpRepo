@@ -448,24 +448,59 @@ namespace IntroductionToCsharp
             // Program.addNumbers(10, 20, new int[] { 10, 20 });
             // Program.addNumbers(10, 20);
 
-            //Customr cust1 = new Customr()
+            Customr cust1 = new Customr()
+            {
+                Id = 109,
+                Name = "ARoma",
+                salary = 7000
+            };
+            Customr cust2 = new Customr()
+            {
+                Id = 102,
+                Name = "CRima",
+                salary = 6000
+            };
+            Customr cust3 = new Customr()
+            {
+                Id = 103,
+                Name = "BRihana",
+                salary = 9000
+            };
+
+            List<Customr> customer = new List<Customr>(2);
+            customer.Add(cust1);
+            customer.Add(cust2);
+            customer.Add(cust3);
+            customer.Sort((x, y) => x.Id.CompareTo(y.Id));
+
+            //Comparison<Customr> customerComparer = new Comparison<Customr>(SortByName.CompareCustomer);
+            //customer.Sort(customerComparer);
+            Console.WriteLine("After sorting.....");
+            foreach (var c in customer)
+            {
+                Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            }
+
+            //Console.WriteLine("Before sorting.....");
+            //foreach (var c in customer)
             //{
-            //    Id = 101,
-            //    Name = "Roma",
-            //    salary = 5000
-            //};
-            //Customr cust2 = new Customr()
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+            //customer.Sort();
+            //customer.Reverse();
+            //Console.WriteLine("After sorting.....");
+            //foreach (var c in customer)
             //{
-            //    Id = 102,
-            //    Name = "Rima",
-            //    salary = 6000
-            //};
-            //Customr cust3 = new Customr()
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+
+            //SortByName sortByName = new SortByName();
+            //customer.Sort(sortByName);
+            //Console.WriteLine("After sorting.....");
+            //foreach (var c in customer)
             //{
-            //    Id = 103,
-            //    Name = "Rihana",
-            //    salary = 7000
-            //};
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
 
             //Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
             //customerDictionary.Add(cust1.Id, cust1);
@@ -568,41 +603,41 @@ namespace IntroductionToCsharp
             //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
             //}
 
-            customerr cust1 = new customerr()
-            {
-                Id = 101,
-                Name = "Roma",
-                salary = 5000,
-                Type = "Retail"
-            };
-            customerr cust2 = new customerr()
-            {
-                Id = 102,
-                Name = "Rima",
-                salary = 6000,
-                Type = "Retail"
-            };
-            customerr cust3 = new customerr()
-            {
-                Id = 103,
-                Name = "Rihana",
-                salary = 7000,
-                Type = "Retail"
-            };
-            customerr cust4 = new customerr()
-            {
-                Id = 104,
-                Name = "Anil",
-                salary = 9000,
-                Type = "Corporate"
-            };
-            customerr cust5 = new customerr()
-            {
-                Id = 105,
-                Name = "Sunil",
-                salary = 12000,
-                Type = "Corporate"
-            };
+            //customerr cust1 = new customerr()
+            //{
+            //    Id = 101,
+            //    Name = "Roma",
+            //    salary = 5000,
+            //    Type = "Retail"
+            //};
+            //customerr cust2 = new customerr()
+            //{
+            //    Id = 102,
+            //    Name = "Rima",
+            //    salary = 6000,
+            //    Type = "Retail"
+            //};
+            //customerr cust3 = new customerr()
+            //{
+            //    Id = 103,
+            //    Name = "Rihana",
+            //    salary = 7000,
+            //    Type = "Retail"
+            //};
+            //customerr cust4 = new customerr()
+            //{
+            //    Id = 104,
+            //    Name = "Anil",
+            //    salary = 9000,
+            //    Type = "Corporate"
+            //};
+            //customerr cust5 = new customerr()
+            //{
+            //    Id = 105,
+            //    Name = "Sunil",
+            //    salary = 12000,
+            //    Type = "Corporate"
+            //};
 
             //List<customerr> listcust = new List<customerr>();
             //listcust.Add(cust1);
@@ -632,24 +667,24 @@ namespace IntroductionToCsharp
             //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
             //}
 
-            List<int> numbers = new List<int> {1,4,8,10,2,6,3,5,7,9 };
-            Console.WriteLine("before sorting..");
-            foreach (int i  in numbers)
-            {
-                Console.WriteLine(i);
-            }
-            numbers.Sort();
-            Console.WriteLine("After sorting..");
-            foreach (int i in numbers)
-            {
-                Console.WriteLine(i);
-            }
-            numbers.Reverse();
-            Console.WriteLine("After sorting..");
-            foreach (int i in numbers)
-            {
-                Console.WriteLine(i);
-            }
+            //List<int> numbers = new List<int> {1,4,8,10,2,6,3,5,7,9 };
+            //Console.WriteLine("before sorting..");
+            //foreach (int i  in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //numbers.Sort();
+            //Console.WriteLine("After sorting..");
+            //foreach (int i in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //numbers.Reverse();
+            //Console.WriteLine("After sorting..");
+            //foreach (int i in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
         }
 
         //public static void addNumbers(int fnum, int snum)
