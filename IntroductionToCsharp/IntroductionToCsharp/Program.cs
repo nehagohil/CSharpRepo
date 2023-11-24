@@ -448,44 +448,129 @@ namespace IntroductionToCsharp
             // Program.addNumbers(10, 20, new int[] { 10, 20 });
             // Program.addNumbers(10, 20);
 
-            Customr cust1 = new Customr()
-            {
-                Id = 101,
-                Name = "Roma",
-                salary = 5000
-            };
-            Customr cust2 = new Customr()
-            {
-                Id = 102,
-                Name = "Rima",
-                salary = 6000
-            };
-            Customr cust3 = new Customr()
-            {
-                Id = 103,
-                Name = "Rihana",
-                salary = 7000
-            };
+            //Customr cust1 = new Customr()
+            //{
+            //    Id = 109,
+            //    Name = "ARoma",
+            //    salary = 7000
+            //};
+            //Customr cust2 = new Customr()
+            //{
+            //    Id = 102,
+            //    Name = "CRima",
+            //    salary = 6000
+            //};
+            //Customr cust3 = new Customr()
+            //{
+            //    Id = 103,
+            //    Name = "BRihana",
+            //    salary = 9000
+            //};
+
+            //List<Customr> customer = new List<Customr>(2);
+            //customer.Add(cust1);
+            //customer.Add(cust2);
+            //customer.Add(cust3);
+            //Console.WriteLine("Is salary is greater than 1000 ? "+customer.TrueForAll(x => x.salary > 1000));
+
+            ////customer.Sort((x, y) => x.Id.CompareTo(y.Id));
+            ////Comparison<Customr> customerComparer = new Comparison<Customr>(SortByName.CompareCustomer);
+            ////customer.Sort(customerComparer);
+            //Console.WriteLine("After sorting.....");
+            //foreach (var c in customer)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+
+            //Console.WriteLine("Before sorting.....");
+            //foreach (var c in customer)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+            //customer.Sort();
+            //customer.Reverse();
+            //Console.WriteLine("After sorting.....");
+            //foreach (var c in customer)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+
+            //SortByName sortByName = new SortByName();
+            //customer.Sort(sortByName);
+            //Console.WriteLine("After sorting.....");
+            //foreach (var c in customer)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
 
             //Dictionary<int, Customr> customerDictionary = new Dictionary<int, Customr>();
             //customerDictionary.Add(cust1.Id, cust1);
             //customerDictionary.Add(cust2.Id, cust2);
             //customerDictionary.Add(cust3.Id, cust3);
 
-            Customr[] customer = new Customr[3];
-            customer[0] = cust1;
-            customer[1] = cust2;
-            customer[2] = cust3;
-            Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
+            //Customr[] customer = new Customr[3];
+            //customer[0] = cust1;
+            //customer[1] = cust2;
+            //customer[2] = cust3;
 
-            foreach (KeyValuePair<int,Customr> kvp in dict)
-            {
-                Console.WriteLine("Key is : "+kvp.Key);
-                Customr cust = kvp.Value;
-                Console.WriteLine("Id is = "+ cust.Id);
-                Console.WriteLine("Name is = " + cust.Name);
-                Console.WriteLine("Salary is = " + cust.salary);
-            }
+            //List<Customr> customer = new List<Customr>(2);
+            //customer.Add(cust1);
+            //customer.Add(cust2);
+            //customer.Add(cust3);
+
+            //int index = customer.FindLastIndex(2, cust => cust.salary > 5000);
+            //Console.WriteLine(index);
+
+            //int index = customer.FindIndex(2,cust => cust.salary > 5000);
+            //Console.WriteLine(index);
+
+            //List<Customr> cust = customer.FindAll(cust => cust.salary > 5000);
+            //foreach (var c in cust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
+
+            //Customr c = customer.FindLast(cust => cust.salary > 5000);
+            //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+
+            //Customr c = customer.Find(cust => cust.salary > 5000);
+            //Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+
+            //if (customer.Exists(cust => cust.Name.StartsWith("P")))
+            //{
+            //    Console.WriteLine("object does exists...");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("object does not exists...");
+            //}
+            // customer.Insert(0, cust2);
+
+            //Console.WriteLine(customer.IndexOf(cust2));
+            //if (customer.Contains(cust3))
+            //{
+            //    Console.WriteLine("object does exists...");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("object does not exists...");
+            //}
+
+            //foreach (Customr c in customer)
+            //{
+            //    Console.WriteLine(c.Id);
+            //}
+
+            // Dictionary<int, Customr> dict = customer.ToDictionary(cust => cust.Id, cust => cust);
+
+            //foreach (KeyValuePair<int,Customr> kvp in dict)
+            //{
+            //    Console.WriteLine("Key is : "+kvp.Key);
+            //    Customr cust = kvp.Value;
+            //    Console.WriteLine("Id is = "+ cust.Id);
+            //    Console.WriteLine("Name is = " + cust.Name);
+            //    Console.WriteLine("Salary is = " + cust.salary);
+            //}
 
 
             //Console.WriteLine("The Count of customer is = " +customerDictionary.Count(kvp => kvp.Value.salary > 6000));
@@ -519,6 +604,205 @@ namespace IntroductionToCsharp
             //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", cust.Id, cust.Name, cust.salary);
             //}
 
+            //customerr cust1 = new customerr()
+            //{
+            //    Id = 101,
+            //    Name = "Roma",
+            //    salary = 5000,
+            //    Type = "Retail"
+            //};
+            //customerr cust2 = new customerr()
+            //{
+            //    Id = 102,
+            //    Name = "Rima",
+            //    salary = 6000,
+            //    Type = "Retail"
+            //};
+            //customerr cust3 = new customerr()
+            //{
+            //    Id = 103,
+            //    Name = "Rihana",
+            //    salary = 7000,
+            //    Type = "Retail"
+            //};
+            //customerr cust4 = new customerr()
+            //{
+            //    Id = 104,
+            //    Name = "Anil",
+            //    salary = 9000,
+            //    Type = "Corporate"
+            //};
+            //customerr cust5 = new customerr()
+            //{
+            //    Id = 105,
+            //    Name = "Sunil",
+            //    salary = 12000,
+            //    Type = "Corporate"
+            //};
+
+            //List<customerr> listcust = new List<customerr>();
+            //listcust.Add(cust1);
+            //listcust.Add(cust2);
+            //listcust.Add(cust3);
+
+            //List<customerr> listcorporatecust = new List<customerr>();
+            //listcorporatecust.Add(cust4);
+            //listcorporatecust.Add(cust5);
+
+            //listcust.InsertRange(3, listcorporatecust);
+            //foreach (customerr c in listcust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
+            //}
+
+            //List<customerr> listcust1= listcust.GetRange(3, 2);
+            //foreach (customerr c in listcust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
+            //}
+
+            //listcust.AddRange(listcorporatecust);
+
+            //foreach (customerr c in listcust)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2} Type = {3}", c.Id, c.Name, c.salary, c.Type);
+            //}
+
+            //List<int> numbers = new List<int> {1,4,8,10,2,6,3,5,7,9 };
+            //Console.WriteLine("before sorting..");
+            //foreach (int i  in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //numbers.Sort();
+            //Console.WriteLine("After sorting..");
+            //foreach (int i in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //numbers.Reverse();
+            //Console.WriteLine("After sorting..");
+            //foreach (int i in numbers)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            //Country country1 = new Country() {Code = "IND", Name = "INDIA", Capital ="Delhi" };
+            //Country country2 = new Country() { Code = "AUS", Name = "AUSTRALIA", Capital = "Canberra" };
+            //Country country3 = new Country() { Code = "USA", Name = "UNITED STATES", Capital = "WASHINGTON D.C" };
+            //Country country4 = new Country() { Code = "GBR", Name = "UNITED KINGDOM", Capital = "London" };
+            //Country country5 = new Country() { Code = "CAN", Name = "CANADA", Capital = "OTTWA" };
+
+            //List<Country> countries = new List<Country>();
+            //countries.Add(country1);
+            //countries.Add(country2);
+            //countries.Add(country3);
+            //countries.Add(country4);
+            //countries.Add(country5);
+
+            //Dictionary<string, Country> countrydict = new Dictionary<string, Country>();
+            //countrydict.Add(country1.Code, country1);
+            //countrydict.Add(country2.Code, country2);
+            //countrydict.Add(country3.Code, country3);
+            //countrydict.Add(country4.Code, country4);
+            //countrydict.Add(country5.Code, country5);
+
+            //string userchoice = string.Empty;
+            //do
+            //{
+            //    Console.WriteLine("Please enter country code");
+            //    string strcountrycode = Console.ReadLine().ToUpper();
+            //    // Country resultcountry = countries.Find(c => c.Code == strcountrycode);
+            //    Country resultcountry = countrydict.ContainsKey(strcountrycode) ? countrydict[strcountrycode] : null;
+            //    if (resultcountry == null)
+            //    {
+            //        Console.WriteLine("Country code not valid");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Name = {0} , Capital = {1} ", resultcountry.Name, resultcountry.Capital);
+            //    }
+            //    do
+            //    {
+            //        Console.WriteLine("Do you want to continue ? YES/NO");
+            //        userchoice = Console.ReadLine().ToUpper();
+            //    } while (userchoice != "NO" && userchoice != "YES");
+            //} while (userchoice == "YES");
+
+            //CustomerQueue cq1 = new CustomerQueue { Id = 1, Name = "Mahesh", Gender = "male" };
+            //CustomerQueue cq2 = new CustomerQueue { Id = 2, Name = "Suresh", Gender = "male" };
+            //CustomerQueue cq3 = new CustomerQueue { Id = 3, Name = "Manali", Gender = "female" };
+            //CustomerQueue cq4 = new CustomerQueue { Id = 4, Name = "mohali", Gender = "female" };
+
+            //Stack<CustomerQueue> customerStack = new Stack<CustomerQueue>();
+            //customerStack.Push(cq1);
+            //customerStack.Push(cq2);
+            //customerStack.Push(cq3);
+            //customerStack.Push(cq4);
+
+            //CustomerQueue c1 = customerStack.Peek();
+            //Console.WriteLine(c1.Id + " - " + c1.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c1 = customerStack.Pop();
+            //Console.WriteLine(c1.Id + " - " + c1.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c2 = customerStack.Pop();
+            //Console.WriteLine(c2.Id + " - " + c2.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c3 = customerStack.Pop();
+            //Console.WriteLine(c3.Id + " - " + c3.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c4 = customerStack.Pop();
+            //Console.WriteLine(c4.Id + " - " + c4.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //Queue<CustomerQueue> customerQueues = new Queue<CustomerQueue>();
+            //customerQueues.Enqueue(cq1);
+            //customerQueues.Enqueue(cq2);
+            //customerQueues.Enqueue(cq3);
+            //customerQueues.Enqueue(cq4);
+
+            //if(customerQueues.Contains(cq1))
+            //{
+            //    Console.WriteLine("cq1 object exists");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("cq1 object doesn't exists");
+            //}
+
+            //CustomerQueue cq = customerQueues.Peek();
+            //Console.WriteLine(cq.Id + " - " + cq.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c1 = customerQueues.Dequeue();
+            //Console.WriteLine(c1.Id + " - " +c1.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c2 = customerQueues.Dequeue();
+            //Console.WriteLine(c2.Id + " - " + c2.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c3 = customerQueues.Dequeue();
+            //Console.WriteLine(c3.Id + " - " + c3.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c4 = customerQueues.Dequeue();
+            //Console.WriteLine(c4.Id + " - " + c4.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            Console.WriteLine("Please enter the target number");
+            Object target =  Console.ReadLine();
+            numbers n1 = new numbers();
+           
+           // ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
+            Thread T1 = new Thread(n1.Printnumbers);
+            T1.Start(target);
+
         }
 
         //public static void addNumbers(int fnum, int snum)
@@ -534,7 +818,7 @@ namespace IntroductionToCsharp
         //        {
         //            result += i;
         //        }
-                
+
         //    }
         //    Console.WriteLine("Addition is :" + result);
         //}
@@ -558,7 +842,23 @@ namespace IntroductionToCsharp
         //    Console.WriteLine("Addition is :" + result);
         //}
 
+        
+    }
 
+    class numbers
+    {
+        public void Printnumbers(object target)
+        {
+            int number = 0;
+            if(int.TryParse(target.ToString(),out number))
+            {
+                for (int i = 1; i <= number; i++)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            
+        }
     }
 
 }
