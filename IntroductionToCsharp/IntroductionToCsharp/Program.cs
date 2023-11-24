@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace IntroductionToCsharp
 {
-    
+    public delegate void sumOfNumbersCallback(int SumOfNumbers);
     class Program
     {
         static void Main(string[] args)
@@ -797,7 +797,8 @@ namespace IntroductionToCsharp
 
             Console.WriteLine("Please enter the target number");
             int target = Convert.ToInt32(Console.ReadLine());
-            numbers n1 = new numbers(target);
+            sumOfNumbersCallback callback = new sumOfNumbersCallback(PrintSumOfNumbers);
+            numbers n1 = new numbers(target, callback);
            
            // ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
             Thread T1 = new Thread(n1.Printnumbers);
@@ -842,25 +843,32 @@ namespace IntroductionToCsharp
         //    Console.WriteLine("Addition is :" + result);
         //}
 
-        
+       public static void PrintSumOfNumbers(int sum)
+        {
+            Console.WriteLine(" Sum is = "+sum);
+        }
     }
 
     class numbers
     {
         private int _target;
-
-        public numbers(int target)
+        sumOfNumbersCallback _callbackmethod;
+        public numbers(int target, sumOfNumbersCallback callbackmethod)
         {
             this._target = target;
+            this._callbackmethod = callbackmethod;
         }
         public void Printnumbers(object target)
         {
-            
+            int sum = 0;
                 for (int i = 1; i <= _target; i++)
                 {
-                    Console.WriteLine(i);
+                sum = sum + i;
                 }
-            
+            if(_callbackmethod != null)
+            {
+                _callbackmethod(sum);
+            }
             
         }
     }
