@@ -734,20 +734,46 @@ namespace IntroductionToCsharp
             CustomerQueue cq3 = new CustomerQueue { Id = 3, Name = "Manali", Gender = "female" };
             CustomerQueue cq4 = new CustomerQueue { Id = 4, Name = "mohali", Gender = "female" };
 
-            Queue<CustomerQueue> customerQueues = new Queue<CustomerQueue>();
-            customerQueues.Enqueue(cq1);
-            customerQueues.Enqueue(cq2);
-            customerQueues.Enqueue(cq3);
-            customerQueues.Enqueue(cq4);
+            Stack<CustomerQueue> customerStack = new Stack<CustomerQueue>();
+            customerStack.Push(cq1);
+            customerStack.Push(cq2);
+            customerStack.Push(cq3);
+            customerStack.Push(cq4);
 
-            if(customerQueues.Contains(cq1))
-            {
-                Console.WriteLine("cq1 object exists");
-            }
-            else
-            {
-                Console.WriteLine("cq1 object doesn't exists");
-            }
+            CustomerQueue c1 = customerStack.Peek();
+            Console.WriteLine(c1.Id + " - " + c1.Name);
+            Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c1 = customerStack.Pop();
+            //Console.WriteLine(c1.Id + " - " + c1.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c2 = customerStack.Pop();
+            //Console.WriteLine(c2.Id + " - " + c2.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c3 = customerStack.Pop();
+            //Console.WriteLine(c3.Id + " - " + c3.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //CustomerQueue c4 = customerStack.Pop();
+            //Console.WriteLine(c4.Id + " - " + c4.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
+
+            //Queue<CustomerQueue> customerQueues = new Queue<CustomerQueue>();
+            //customerQueues.Enqueue(cq1);
+            //customerQueues.Enqueue(cq2);
+            //customerQueues.Enqueue(cq3);
+            //customerQueues.Enqueue(cq4);
+
+            //if(customerQueues.Contains(cq1))
+            //{
+            //    Console.WriteLine("cq1 object exists");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("cq1 object doesn't exists");
+            //}
 
             //CustomerQueue cq = customerQueues.Peek();
             //Console.WriteLine(cq.Id + " - " + cq.Name);
