@@ -794,8 +794,14 @@ namespace IntroductionToCsharp
             //CustomerQueue c4 = customerQueues.Dequeue();
             //Console.WriteLine(c4.Id + " - " + c4.Name);
             //Console.WriteLine("Total items in the queue" + customerQueues.Count);
-            Thread T1 = new Thread(numbers.Printnumbers);
-            T1.Start();
+
+            Console.WriteLine("Please enter the target number");
+            Object target =  Console.ReadLine();
+            numbers n1 = new numbers();
+           
+           // ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
+            Thread T1 = new Thread(n1.Printnumbers);
+            T1.Start(target);
 
         }
 
@@ -841,12 +847,17 @@ namespace IntroductionToCsharp
 
     class numbers
     {
-        public static void Printnumbers()
+        public void Printnumbers(object target)
         {
-            for(int i=1; i<=10; i++)
+            int number = 0;
+            if(int.TryParse(target.ToString(),out number))
             {
-                Console.WriteLine(i);
+                for (int i = 1; i <= number; i++)
+                {
+                    Console.WriteLine(i);
+                }
             }
+            
         }
     }
 
