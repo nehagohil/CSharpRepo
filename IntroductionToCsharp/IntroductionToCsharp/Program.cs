@@ -448,39 +448,39 @@ namespace IntroductionToCsharp
             // Program.addNumbers(10, 20, new int[] { 10, 20 });
             // Program.addNumbers(10, 20);
 
-            Customr cust1 = new Customr()
-            {
-                Id = 109,
-                Name = "ARoma",
-                salary = 7000
-            };
-            Customr cust2 = new Customr()
-            {
-                Id = 102,
-                Name = "CRima",
-                salary = 6000
-            };
-            Customr cust3 = new Customr()
-            {
-                Id = 103,
-                Name = "BRihana",
-                salary = 9000
-            };
+            //Customr cust1 = new Customr()
+            //{
+            //    Id = 109,
+            //    Name = "ARoma",
+            //    salary = 7000
+            //};
+            //Customr cust2 = new Customr()
+            //{
+            //    Id = 102,
+            //    Name = "CRima",
+            //    salary = 6000
+            //};
+            //Customr cust3 = new Customr()
+            //{
+            //    Id = 103,
+            //    Name = "BRihana",
+            //    salary = 9000
+            //};
 
-            List<Customr> customer = new List<Customr>(2);
-            customer.Add(cust1);
-            customer.Add(cust2);
-            customer.Add(cust3);
-            Console.WriteLine("Is salary is greater than 1000 ? "+customer.TrueForAll(x => x.salary > 1000));
+            //List<Customr> customer = new List<Customr>(2);
+            //customer.Add(cust1);
+            //customer.Add(cust2);
+            //customer.Add(cust3);
+            //Console.WriteLine("Is salary is greater than 1000 ? "+customer.TrueForAll(x => x.salary > 1000));
 
-            //customer.Sort((x, y) => x.Id.CompareTo(y.Id));
-            //Comparison<Customr> customerComparer = new Comparison<Customr>(SortByName.CompareCustomer);
-            //customer.Sort(customerComparer);
-            Console.WriteLine("After sorting.....");
-            foreach (var c in customer)
-            {
-                Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
-            }
+            ////customer.Sort((x, y) => x.Id.CompareTo(y.Id));
+            ////Comparison<Customr> customerComparer = new Comparison<Customr>(SortByName.CompareCustomer);
+            ////customer.Sort(customerComparer);
+            //Console.WriteLine("After sorting.....");
+            //foreach (var c in customer)
+            //{
+            //    Console.WriteLine("Id = {0} Name = {1} Salary = {2}", c.Id, c.Name, c.salary);
+            //}
 
             //Console.WriteLine("Before sorting.....");
             //foreach (var c in customer)
@@ -686,6 +686,43 @@ namespace IntroductionToCsharp
             //{
             //    Console.WriteLine(i);
             //}
+
+            Country country1 = new Country() {Code = "IND", Name = "INDIA", Capital ="Delhi" };
+            Country country2 = new Country() { Code = "AUS", Name = "AUSTRALIA", Capital = "Canberra" };
+            Country country3 = new Country() { Code = "USA", Name = "UNITED STATES", Capital = "WASHINGTON D.C" };
+            Country country4 = new Country() { Code = "GBR", Name = "UNITED KINGDOM", Capital = "London" };
+            Country country5 = new Country() { Code = "CAN", Name = "CANADA", Capital = "OTTWA" };
+
+            List<Country> countries = new List<Country>();
+            countries.Add(country1);
+            countries.Add(country2);
+            countries.Add(country3);
+            countries.Add(country4);
+            countries.Add(country5);
+
+            string userchoice = string.Empty;
+            do
+            {
+                Console.WriteLine("Please enter country code");
+                string strcountrycode = Console.ReadLine().ToUpper();
+                Country resultcountry = countries.Find(c => c.Code == strcountrycode);
+
+                if (resultcountry == null)
+                {
+                    Console.WriteLine("Country code not valid");
+                }
+                else
+                {
+                    Console.WriteLine("Name = {0} , Capital = {1} ", resultcountry.Name, resultcountry.Capital);
+                }
+                do
+                {
+                    Console.WriteLine("Do you want to continue ? YES/NO");
+                    userchoice = Console.ReadLine().ToUpper();
+                } while (userchoice != "NO" && userchoice != "YES");
+            } while (userchoice == "YES");
+            
+            
         }
 
         //public static void addNumbers(int fnum, int snum)
