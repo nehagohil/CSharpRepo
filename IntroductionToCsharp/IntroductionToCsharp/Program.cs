@@ -729,20 +729,20 @@ namespace IntroductionToCsharp
             //    } while (userchoice != "NO" && userchoice != "YES");
             //} while (userchoice == "YES");
 
-            CustomerQueue cq1 = new CustomerQueue { Id = 1, Name = "Mahesh", Gender = "male" };
-            CustomerQueue cq2 = new CustomerQueue { Id = 2, Name = "Suresh", Gender = "male" };
-            CustomerQueue cq3 = new CustomerQueue { Id = 3, Name = "Manali", Gender = "female" };
-            CustomerQueue cq4 = new CustomerQueue { Id = 4, Name = "mohali", Gender = "female" };
+            //CustomerQueue cq1 = new CustomerQueue { Id = 1, Name = "Mahesh", Gender = "male" };
+            //CustomerQueue cq2 = new CustomerQueue { Id = 2, Name = "Suresh", Gender = "male" };
+            //CustomerQueue cq3 = new CustomerQueue { Id = 3, Name = "Manali", Gender = "female" };
+            //CustomerQueue cq4 = new CustomerQueue { Id = 4, Name = "mohali", Gender = "female" };
 
-            Stack<CustomerQueue> customerStack = new Stack<CustomerQueue>();
-            customerStack.Push(cq1);
-            customerStack.Push(cq2);
-            customerStack.Push(cq3);
-            customerStack.Push(cq4);
+            //Stack<CustomerQueue> customerStack = new Stack<CustomerQueue>();
+            //customerStack.Push(cq1);
+            //customerStack.Push(cq2);
+            //customerStack.Push(cq3);
+            //customerStack.Push(cq4);
 
-            CustomerQueue c1 = customerStack.Peek();
-            Console.WriteLine(c1.Id + " - " + c1.Name);
-            Console.WriteLine("Total items in the queue" + customerStack.Count);
+            //CustomerQueue c1 = customerStack.Peek();
+            //Console.WriteLine(c1.Id + " - " + c1.Name);
+            //Console.WriteLine("Total items in the queue" + customerStack.Count);
 
             //CustomerQueue c1 = customerStack.Pop();
             //Console.WriteLine(c1.Id + " - " + c1.Name);
@@ -794,6 +794,8 @@ namespace IntroductionToCsharp
             //CustomerQueue c4 = customerQueues.Dequeue();
             //Console.WriteLine(c4.Id + " - " + c4.Name);
             //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+            Thread T1 = new Thread(numbers.Printnumbers);
+            T1.Start();
 
         }
 
@@ -834,7 +836,18 @@ namespace IntroductionToCsharp
         //    Console.WriteLine("Addition is :" + result);
         //}
 
+        
+    }
 
+    class numbers
+    {
+        public static void Printnumbers()
+        {
+            for(int i=1; i<=10; i++)
+            {
+                Console.WriteLine(i);
+            }
+        }
     }
 
 }
