@@ -687,11 +687,11 @@ namespace IntroductionToCsharp
             //    Console.WriteLine(i);
             //}
 
-            Country country1 = new Country() {Code = "IND", Name = "INDIA", Capital ="Delhi" };
-            Country country2 = new Country() { Code = "AUS", Name = "AUSTRALIA", Capital = "Canberra" };
-            Country country3 = new Country() { Code = "USA", Name = "UNITED STATES", Capital = "WASHINGTON D.C" };
-            Country country4 = new Country() { Code = "GBR", Name = "UNITED KINGDOM", Capital = "London" };
-            Country country5 = new Country() { Code = "CAN", Name = "CANADA", Capital = "OTTWA" };
+            //Country country1 = new Country() {Code = "IND", Name = "INDIA", Capital ="Delhi" };
+            //Country country2 = new Country() { Code = "AUS", Name = "AUSTRALIA", Capital = "Canberra" };
+            //Country country3 = new Country() { Code = "USA", Name = "UNITED STATES", Capital = "WASHINGTON D.C" };
+            //Country country4 = new Country() { Code = "GBR", Name = "UNITED KINGDOM", Capital = "London" };
+            //Country country5 = new Country() { Code = "CAN", Name = "CANADA", Capital = "OTTWA" };
 
             //List<Country> countries = new List<Country>();
             //countries.Add(country1);
@@ -700,36 +700,75 @@ namespace IntroductionToCsharp
             //countries.Add(country4);
             //countries.Add(country5);
 
-            Dictionary<string, Country> countrydict = new Dictionary<string, Country>();
-            countrydict.Add(country1.Code, country1);
-            countrydict.Add(country2.Code, country2);
-            countrydict.Add(country3.Code, country3);
-            countrydict.Add(country4.Code, country4);
-            countrydict.Add(country5.Code, country5);
+            //Dictionary<string, Country> countrydict = new Dictionary<string, Country>();
+            //countrydict.Add(country1.Code, country1);
+            //countrydict.Add(country2.Code, country2);
+            //countrydict.Add(country3.Code, country3);
+            //countrydict.Add(country4.Code, country4);
+            //countrydict.Add(country5.Code, country5);
 
-            string userchoice = string.Empty;
-            do
+            //string userchoice = string.Empty;
+            //do
+            //{
+            //    Console.WriteLine("Please enter country code");
+            //    string strcountrycode = Console.ReadLine().ToUpper();
+            //    // Country resultcountry = countries.Find(c => c.Code == strcountrycode);
+            //    Country resultcountry = countrydict.ContainsKey(strcountrycode) ? countrydict[strcountrycode] : null;
+            //    if (resultcountry == null)
+            //    {
+            //        Console.WriteLine("Country code not valid");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Name = {0} , Capital = {1} ", resultcountry.Name, resultcountry.Capital);
+            //    }
+            //    do
+            //    {
+            //        Console.WriteLine("Do you want to continue ? YES/NO");
+            //        userchoice = Console.ReadLine().ToUpper();
+            //    } while (userchoice != "NO" && userchoice != "YES");
+            //} while (userchoice == "YES");
+
+            CustomerQueue cq1 = new CustomerQueue { Id = 1, Name = "Mahesh", Gender = "male" };
+            CustomerQueue cq2 = new CustomerQueue { Id = 2, Name = "Suresh", Gender = "male" };
+            CustomerQueue cq3 = new CustomerQueue { Id = 3, Name = "Manali", Gender = "female" };
+            CustomerQueue cq4 = new CustomerQueue { Id = 4, Name = "mohali", Gender = "female" };
+
+            Queue<CustomerQueue> customerQueues = new Queue<CustomerQueue>();
+            customerQueues.Enqueue(cq1);
+            customerQueues.Enqueue(cq2);
+            customerQueues.Enqueue(cq3);
+            customerQueues.Enqueue(cq4);
+
+            if(customerQueues.Contains(cq1))
             {
-                Console.WriteLine("Please enter country code");
-                string strcountrycode = Console.ReadLine().ToUpper();
-                // Country resultcountry = countries.Find(c => c.Code == strcountrycode);
-                Country resultcountry = countrydict.ContainsKey(strcountrycode) ? countrydict[strcountrycode] : null;
-                if (resultcountry == null)
-                {
-                    Console.WriteLine("Country code not valid");
-                }
-                else
-                {
-                    Console.WriteLine("Name = {0} , Capital = {1} ", resultcountry.Name, resultcountry.Capital);
-                }
-                do
-                {
-                    Console.WriteLine("Do you want to continue ? YES/NO");
-                    userchoice = Console.ReadLine().ToUpper();
-                } while (userchoice != "NO" && userchoice != "YES");
-            } while (userchoice == "YES");
-            
-            
+                Console.WriteLine("cq1 object exists");
+            }
+            else
+            {
+                Console.WriteLine("cq1 object doesn't exists");
+            }
+
+            //CustomerQueue cq = customerQueues.Peek();
+            //Console.WriteLine(cq.Id + " - " + cq.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c1 = customerQueues.Dequeue();
+            //Console.WriteLine(c1.Id + " - " +c1.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c2 = customerQueues.Dequeue();
+            //Console.WriteLine(c2.Id + " - " + c2.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c3 = customerQueues.Dequeue();
+            //Console.WriteLine(c3.Id + " - " + c3.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
+            //CustomerQueue c4 = customerQueues.Dequeue();
+            //Console.WriteLine(c4.Id + " - " + c4.Name);
+            //Console.WriteLine("Total items in the queue" + customerQueues.Count);
+
         }
 
         //public static void addNumbers(int fnum, int snum)
