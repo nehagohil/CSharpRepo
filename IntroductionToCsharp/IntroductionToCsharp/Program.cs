@@ -471,8 +471,9 @@ namespace IntroductionToCsharp
             customer.Add(cust1);
             customer.Add(cust2);
             customer.Add(cust3);
-            customer.Sort((x, y) => x.Id.CompareTo(y.Id));
+            Console.WriteLine("Is salary is greater than 1000 ? "+customer.TrueForAll(x => x.salary > 1000));
 
+            //customer.Sort((x, y) => x.Id.CompareTo(y.Id));
             //Comparison<Customr> customerComparer = new Comparison<Customr>(SortByName.CompareCustomer);
             //customer.Sort(customerComparer);
             Console.WriteLine("After sorting.....");
