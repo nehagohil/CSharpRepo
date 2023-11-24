@@ -796,12 +796,12 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Total items in the queue" + customerQueues.Count);
 
             Console.WriteLine("Please enter the target number");
-            Object target =  Console.ReadLine();
-            numbers n1 = new numbers();
+            int target = Convert.ToInt32(Console.ReadLine());
+            numbers n1 = new numbers(target);
            
            // ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
             Thread T1 = new Thread(n1.Printnumbers);
-            T1.Start(target);
+            T1.Start();
 
         }
 
@@ -847,16 +847,20 @@ namespace IntroductionToCsharp
 
     class numbers
     {
+        private int _target;
+
+        public numbers(int target)
+        {
+            this._target = target;
+        }
         public void Printnumbers(object target)
         {
-            int number = 0;
-            if(int.TryParse(target.ToString(),out number))
-            {
-                for (int i = 1; i <= number; i++)
+            
+                for (int i = 1; i <= _target; i++)
                 {
                     Console.WriteLine(i);
                 }
-            }
+            
             
         }
     }
