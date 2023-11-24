@@ -795,15 +795,45 @@ namespace IntroductionToCsharp
             //Console.WriteLine(c4.Id + " - " + c4.Name);
             //Console.WriteLine("Total items in the queue" + customerQueues.Count);
 
-            Console.WriteLine("Please enter the target number");
-            int target = Convert.ToInt32(Console.ReadLine());
-            sumOfNumbersCallback callback = new sumOfNumbersCallback(PrintSumOfNumbers);
-            numbers n1 = new numbers(target, callback);
-           
-           // ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
-            Thread T1 = new Thread(n1.Printnumbers);
+            // Console.WriteLine("Please enter the target number");
+            // int target = Convert.ToInt32(Console.ReadLine());
+            // sumOfNumbersCallback callback = new sumOfNumbersCallback(PrintSumOfNumbers);
+            // numbers n1 = new numbers(target, callback);
+
+            //// ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
+            // Thread T1 = new Thread(n1.Printnumbers);
+            // T1.Start();
+            Console.WriteLine("Main started");
+            Thread T1 = new Thread(Program.Thread1Function);
             T1.Start();
 
+            Thread T2 = new Thread(Program.Thread2Function);
+            T2.Start();
+
+            if(T1.Join(1000))
+            {
+                Console.WriteLine("Thread 1 completed");
+            }
+            else
+            {
+                Console.WriteLine("Thread 1 is not completed in 1 sec");
+            }
+            
+
+            T2.Join();
+            Console.WriteLine("Thread 2 completed");
+            Console.WriteLine("Main completed");
+        }
+
+        public static void Thread1Function()
+        {
+            Console.WriteLine("Thread 1 started");
+            Thread.Sleep(5000);
+            Console.WriteLine("Thread 1 is about to return");
+        }
+        public static void Thread2Function()
+        {
+            Console.WriteLine("Thread 2 started");
         }
 
         //public static void addNumbers(int fnum, int snum)
@@ -843,34 +873,34 @@ namespace IntroductionToCsharp
         //    Console.WriteLine("Addition is :" + result);
         //}
 
-       public static void PrintSumOfNumbers(int sum)
-        {
-            Console.WriteLine(" Sum is = "+sum);
-        }
-    }
+        //public static void PrintSumOfNumbers(int sum)
+        // {
+        //     Console.WriteLine(" Sum is = "+sum);
+        // }
 
-    class numbers
-    {
-        private int _target;
-        sumOfNumbersCallback _callbackmethod;
-        public numbers(int target, sumOfNumbersCallback callbackmethod)
-        {
-            this._target = target;
-            this._callbackmethod = callbackmethod;
-        }
-        public void Printnumbers(object target)
-        {
-            int sum = 0;
-                for (int i = 1; i <= _target; i++)
-                {
-                sum = sum + i;
-                }
-            if(_callbackmethod != null)
-            {
-                _callbackmethod(sum);
-            }
-            
-        }
+
+        //class numbers
+        //{
+        //    private int _target;
+        //    sumOfNumbersCallback _callbackmethod;
+        //    public numbers(int target, sumOfNumbersCallback callbackmethod)
+        //    {
+        //        this._target = target;
+        //        this._callbackmethod = callbackmethod;
+        //    }
+        //    public void Printnumbers(object target)
+        //    {
+        //        int sum = 0;
+        //            for (int i = 1; i <= _target; i++)
+        //            {
+        //            sum = sum + i;
+        //            }
+        //        if(_callbackmethod != null)
+        //        {
+        //            _callbackmethod(sum);
+        //        }
+
+        //    }
     }
 
 }
