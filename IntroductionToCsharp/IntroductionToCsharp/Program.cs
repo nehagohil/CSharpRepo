@@ -693,20 +693,27 @@ namespace IntroductionToCsharp
             Country country4 = new Country() { Code = "GBR", Name = "UNITED KINGDOM", Capital = "London" };
             Country country5 = new Country() { Code = "CAN", Name = "CANADA", Capital = "OTTWA" };
 
-            List<Country> countries = new List<Country>();
-            countries.Add(country1);
-            countries.Add(country2);
-            countries.Add(country3);
-            countries.Add(country4);
-            countries.Add(country5);
+            //List<Country> countries = new List<Country>();
+            //countries.Add(country1);
+            //countries.Add(country2);
+            //countries.Add(country3);
+            //countries.Add(country4);
+            //countries.Add(country5);
+
+            Dictionary<string, Country> countrydict = new Dictionary<string, Country>();
+            countrydict.Add(country1.Code, country1);
+            countrydict.Add(country2.Code, country2);
+            countrydict.Add(country3.Code, country3);
+            countrydict.Add(country4.Code, country4);
+            countrydict.Add(country5.Code, country5);
 
             string userchoice = string.Empty;
             do
             {
                 Console.WriteLine("Please enter country code");
                 string strcountrycode = Console.ReadLine().ToUpper();
-                Country resultcountry = countries.Find(c => c.Code == strcountrycode);
-
+                // Country resultcountry = countries.Find(c => c.Code == strcountrycode);
+                Country resultcountry = countrydict.ContainsKey(strcountrycode) ? countrydict[strcountrycode] : null;
                 if (resultcountry == null)
                 {
                     Console.WriteLine("Country code not valid");
