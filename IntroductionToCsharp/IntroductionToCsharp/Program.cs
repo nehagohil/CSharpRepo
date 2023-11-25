@@ -946,10 +946,18 @@ namespace IntroductionToCsharp
             new Employeeee(){ID = 102, Name = "Viraj"},
             new Employeeee(){ID = 103, Name = "Chickoo"}
         };
-            Employeeee emp = emplist.Find(delegate(Employeeee employee) { return employee.ID == 102; });
+            //Func<Employeeee, string> selector = employee => "Name =" + employee.Name;
+            //IEnumerable<string> names = emplist.Select(selector);
+            IEnumerable<string> names = emplist.Select(employee => "Name =" + employee.Name);
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
 
-            Console.WriteLine(emp.ID);
-            Console.WriteLine(emp.Name);
+            //Employeeee emp = emplist.Find(delegate(Employeeee employee) { return employee.ID == 102; });
+
+            //Console.WriteLine(emp.ID);
+            //Console.WriteLine(emp.Name);
 
         }
         //public static void EvenNumberSum()
