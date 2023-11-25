@@ -66,26 +66,31 @@ namespace IntroductionToCsharp
 
             //How to resolve deadlock
 
-            object _lock1, _lock2;
-            if(_fromaccount.ID < _toaccount.ID)
-            {
-                _lock1 = _fromaccount;
-                _lock2 = _toaccount;
-            }
-            else
-            {
-                _lock1 = _toaccount;
-                _lock2 = _fromaccount;
-            }
-            lock(_lock1)
-            {
-                Thread.Sleep(1000);
-                lock (_lock2)
-                {
-                    _fromaccount.Withdraw(_amounttotransfer);
-                    _toaccount.Deposit(_amounttotransfer);
-                }
-            }
+            //object _lock1, _lock2;
+            //if(_fromaccount.ID < _toaccount.ID)
+            //{
+            //    _lock1 = _fromaccount;
+            //    _lock2 = _toaccount;
+            //}
+            //else
+            //{
+            //    _lock1 = _toaccount;
+            //    _lock2 = _fromaccount;
+            //}
+            //Console.WriteLine(Thread.CurrentThread.Name + "Trying to acquire lock on" + ((Account)_lock1).ID.ToString());
+            //lock (_lock1)
+            //{
+            //    Console.WriteLine(Thread.CurrentThread.Name + "Acquired lock on" + ((Account)_lock1).ID.ToString());
+            //    Console.WriteLine(Thread.CurrentThread.Name + "Suspended for 1 second" + ((Account)_lock1).ID.ToString());
+            //    Thread.Sleep(1000);
+            //    Console.WriteLine(Thread.CurrentThread.Name + "Back in action and trying to acquire lock on " + ((Account)_lock1).ID.ToString());
+            //    lock (_lock2)
+            //    {
+            //        Console.WriteLine(Thread.CurrentThread.Name + "Trying to acquire lock on" + ((Account)_lock2).ID.ToString());
+            //        _fromaccount.Withdraw(_amounttotransfer);
+            //        _toaccount.Deposit(_amounttotransfer);
+            //    }
+            //}
         }
     }
 }

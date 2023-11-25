@@ -7,6 +7,7 @@ using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace IntroductionToCsharp
 {
@@ -902,25 +903,71 @@ namespace IntroductionToCsharp
 
             //    }
 
-            Console.WriteLine("Main Started");
-            Account accountA = new Account(101,10000);
-            Account accountB = new Account(102, 12000);
+            //Console.WriteLine("Main Started");
+            //Account accountA = new Account(101,10000);
+            //Account accountB = new Account(102, 12000);
 
-            AccountManager accountManagerA = new AccountManager(accountA, accountB, 1000);
-            Thread T1 = new Thread(accountManagerA.Transfer);
-            T1.Name = "T1";
+            //AccountManager accountManagerA = new AccountManager(accountA, accountB, 1000);
+            //Thread T1 = new Thread(accountManagerA.Transfer);
+            //T1.Name = "T1";
 
-            AccountManager accountManagerB = new AccountManager(accountB, accountA, 2000);
-            Thread T2 = new Thread(accountManagerB.Transfer);
-            T1.Name = "T2";
+            //AccountManager accountManagerB = new AccountManager(accountB, accountA, 2000);
+            //Thread T2 = new Thread(accountManagerB.Transfer);
+            //T1.Name = "T2";
+
+            //T1.Start();
+            //T2.Start();
+
+            //T1.Join();
+            //T2.Join();
+
+            //Console.WriteLine("Main completed");
+
+            //Console.WriteLine(Environment.ProcessorCount);
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            EvenNumberSum();
+            OddNumberSum();
+            stopwatch.Stop();
+            Console.WriteLine(" Total time without multiple threads "+stopwatch.ElapsedMilliseconds);
+
+            stopwatch= Stopwatch.StartNew();
+            Thread T1 = new Thread(EvenNumberSum);
+            Thread T2 = new Thread(OddNumberSum);
 
             T1.Start();
             T2.Start();
 
             T1.Join();
             T2.Join();
+            Console.WriteLine(" Total time with multiple threads " + stopwatch.ElapsedMilliseconds);
 
-            Console.WriteLine("Main completed");
+        }
+        public static void EvenNumberSum()
+        {
+            int sum = 0;
+            for (int i=0; i<=5000000; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    sum += i;
+                    
+                }
+            }
+            Console.WriteLine("Even number sum is : "+sum);
+        }
+        public static void OddNumberSum()
+        {
+            int sum = 0;
+            for (int i = 0; i <= 5000000; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    sum += i;
+
+                }
+            }
+            Console.WriteLine("Odd number sum is : " + sum);
+
         }
 
     }
