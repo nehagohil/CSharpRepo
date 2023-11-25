@@ -924,51 +924,70 @@ namespace IntroductionToCsharp
             //Console.WriteLine("Main completed");
 
             //Console.WriteLine(Environment.ProcessorCount);
-            Stopwatch stopwatch = Stopwatch.StartNew();
-            EvenNumberSum();
-            OddNumberSum();
-            stopwatch.Stop();
-            Console.WriteLine(" Total time without multiple threads "+stopwatch.ElapsedMilliseconds);
+            //Stopwatch stopwatch = Stopwatch.StartNew();
+            //EvenNumberSum();
+            //OddNumberSum();
+            //stopwatch.Stop();
+            //Console.WriteLine(" Total time without multiple threads "+stopwatch.ElapsedMilliseconds);
 
-            stopwatch= Stopwatch.StartNew();
-            Thread T1 = new Thread(EvenNumberSum);
-            Thread T2 = new Thread(OddNumberSum);
+            //stopwatch= Stopwatch.StartNew();
+            //Thread T1 = new Thread(EvenNumberSum);
+            //Thread T2 = new Thread(OddNumberSum);
 
-            T1.Start();
-            T2.Start();
+            //T1.Start();
+            //T2.Start();
 
-            T1.Join();
-            T2.Join();
-            Console.WriteLine(" Total time with multiple threads " + stopwatch.ElapsedMilliseconds);
-
-        }
-        public static void EvenNumberSum()
+            //T1.Join();
+            //T2.Join();
+            //Console.WriteLine(" Total time with multiple threads " + stopwatch.ElapsedMilliseconds);
+            List<Employeeee> emplist = new List<Employeeee>()
         {
-            int sum = 0;
-            for (int i=0; i<=5000000; i++)
-            {
-                if(i % 2 == 0)
-                {
-                    sum += i;
-                    
-                }
-            }
-            Console.WriteLine("Even number sum is : "+sum);
-        }
-        public static void OddNumberSum()
-        {
-            int sum = 0;
-            for (int i = 0; i <= 5000000; i++)
-            {
-                if (i % 2 == 1)
-                {
-                    sum += i;
+            new Employeeee(){ID = 101, Name = "Babloo"},
+            new Employeeee(){ID = 102, Name = "Viraj"},
+            new Employeeee(){ID = 103, Name = "Chickoo"}
+        };
+            Employeeee emp = emplist.Find(delegate(Employeeee employee) { return employee.ID == 102; });
 
-                }
-            }
-            Console.WriteLine("Odd number sum is : " + sum);
+            Console.WriteLine(emp.ID);
+            Console.WriteLine(emp.Name);
 
         }
+        //public static void EvenNumberSum()
+        //{
+        //    int sum = 0;
+        //    for (int i=0; i<=5000000; i++)
+        //    {
+        //        if(i % 2 == 0)
+        //        {
+        //            sum += i;
 
+        //        }
+        //    }
+        //    Console.WriteLine("Even number sum is : "+sum);
+        //}
+        //public static void OddNumberSum()
+        //{
+        //    int sum = 0;
+        //    for (int i = 0; i <= 5000000; i++)
+        //    {
+        //        if (i % 2 == 1)
+        //        {
+        //            sum += i;
+
+        //        }
+        //    }
+        //    Console.WriteLine("Odd number sum is : " + sum);
+
+        //}
+        
+        
+
+    }
+
+
+    public class Employeeee
+    {
+        public int ID;
+        public string Name; 
     }
 }
