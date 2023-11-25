@@ -803,104 +803,125 @@ namespace IntroductionToCsharp
             //// ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
             // Thread T1 = new Thread(n1.Printnumbers);
             // T1.Start();
-            Console.WriteLine("Main started");
-            Thread T1 = new Thread(Program.Thread1Function);
-            T1.Start();
+            //    Console.WriteLine("Main started");
+            //    Thread T1 = new Thread(Program.Thread1Function);
+            //    T1.Start();
 
-            Thread T2 = new Thread(Program.Thread2Function);
+            //    Thread T2 = new Thread(Program.Thread2Function);
+            //    T2.Start();
+
+            //    if(T1.Join(1000))
+            //    {
+            //        Console.WriteLine("Thread 1 completed");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Thread 1 is not completed in 1 sec");
+            //    }
+
+
+            //    T2.Join();
+            //    Console.WriteLine("Thread 2 completed");
+            //    Console.WriteLine("Main completed");
+            //}
+
+            //public static void Thread1Function()
+            //{
+            //    Console.WriteLine("Thread 1 started");
+            //    Thread.Sleep(5000);
+            //    Console.WriteLine("Thread 1 is about to return");
+            //}
+            //public static void Thread2Function()
+            //{
+            //    Console.WriteLine("Thread 2 started");
+            //}
+
+            //public static void addNumbers(int fnum, int snum)
+            //{
+            //    Program.addNumbers(fnum,snum,null);
+            //}
+            //public static void addNumbers(int fnum, int snum, int[] nums = null)
+            //{
+            //    int result = fnum + snum;
+            //    if(nums != null)
+            //    {
+            //        foreach (int i in nums)
+            //        {
+            //            result += i;
+            //        }
+
+            //    }
+            //    Console.WriteLine("Addition is :" + result);
+            //}
+            //public static void Test(int a=10, int b=20, int c=30)
+            //{
+            //    Console.WriteLine("A is " +a);
+            //    Console.WriteLine("B is " +b);
+            //    Console.WriteLine("C is " +c);
+            //}
+            //public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
+            //{
+            //    int result = fnum + snum;
+            //    if (nums != null)
+            //    {
+            //        foreach (int i in nums)
+            //        {
+            //            result += i;
+            //        }
+
+            //    }
+            //    Console.WriteLine("Addition is :" + result);
+            //}
+
+            //public static void PrintSumOfNumbers(int sum)
+            // {
+            //     Console.WriteLine(" Sum is = "+sum);
+            // }
+
+
+            //class numbers
+            //{
+            //    private int _target;
+            //    sumOfNumbersCallback _callbackmethod;
+            //    public numbers(int target, sumOfNumbersCallback callbackmethod)
+            //    {
+            //        this._target = target;
+            //        this._callbackmethod = callbackmethod;
+            //    }
+            //    public void Printnumbers(object target)
+            //    {
+            //        int sum = 0;
+            //            for (int i = 1; i <= _target; i++)
+            //            {
+            //            sum = sum + i;
+            //            }
+            //        if(_callbackmethod != null)
+            //        {
+            //            _callbackmethod(sum);
+            //        }
+
+            //    }
+
+            Console.WriteLine("Main Started");
+            Account accountA = new Account(101,10000);
+            Account accountB = new Account(102, 12000);
+
+            AccountManager accountManagerA = new AccountManager(accountA, accountB, 1000);
+            Thread T1 = new Thread(accountManagerA.Transfer);
+            T1.Name = "T1";
+
+            AccountManager accountManagerB = new AccountManager(accountB, accountA, 2000);
+            Thread T2 = new Thread(accountManagerB.Transfer);
+            T1.Name = "T2";
+
+            T1.Start();
             T2.Start();
 
-            if(T1.Join(1000))
-            {
-                Console.WriteLine("Thread 1 completed");
-            }
-            else
-            {
-                Console.WriteLine("Thread 1 is not completed in 1 sec");
-            }
-            
-
+            T1.Join();
             T2.Join();
-            Console.WriteLine("Thread 2 completed");
+
             Console.WriteLine("Main completed");
         }
 
-        public static void Thread1Function()
-        {
-            Console.WriteLine("Thread 1 started");
-            Thread.Sleep(5000);
-            Console.WriteLine("Thread 1 is about to return");
-        }
-        public static void Thread2Function()
-        {
-            Console.WriteLine("Thread 2 started");
-        }
-
-        //public static void addNumbers(int fnum, int snum)
-        //{
-        //    Program.addNumbers(fnum,snum,null);
-        //}
-        //public static void addNumbers(int fnum, int snum, int[] nums = null)
-        //{
-        //    int result = fnum + snum;
-        //    if(nums != null)
-        //    {
-        //        foreach (int i in nums)
-        //        {
-        //            result += i;
-        //        }
-
-        //    }
-        //    Console.WriteLine("Addition is :" + result);
-        //}
-        //public static void Test(int a=10, int b=20, int c=30)
-        //{
-        //    Console.WriteLine("A is " +a);
-        //    Console.WriteLine("B is " +b);
-        //    Console.WriteLine("C is " +c);
-        //}
-        //public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
-        //{
-        //    int result = fnum + snum;
-        //    if (nums != null)
-        //    {
-        //        foreach (int i in nums)
-        //        {
-        //            result += i;
-        //        }
-
-        //    }
-        //    Console.WriteLine("Addition is :" + result);
-        //}
-
-        //public static void PrintSumOfNumbers(int sum)
-        // {
-        //     Console.WriteLine(" Sum is = "+sum);
-        // }
-
-
-        //class numbers
-        //{
-        //    private int _target;
-        //    sumOfNumbersCallback _callbackmethod;
-        //    public numbers(int target, sumOfNumbersCallback callbackmethod)
-        //    {
-        //        this._target = target;
-        //        this._callbackmethod = callbackmethod;
-        //    }
-        //    public void Printnumbers(object target)
-        //    {
-        //        int sum = 0;
-        //            for (int i = 1; i <= _target; i++)
-        //            {
-        //            sum = sum + i;
-        //            }
-        //        if(_callbackmethod != null)
-        //        {
-        //            _callbackmethod(sum);
-        //        }
-
-        //    }
     }
-
 }
