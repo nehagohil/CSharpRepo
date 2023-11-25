@@ -7,10 +7,11 @@ using PATA = IntroductionToCsharp.ProjectA.TeamA;
 using PATB = IntroductionToCsharp.ProjectA.TeamB;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace IntroductionToCsharp
 {
-    
+    public delegate void sumOfNumbersCallback(int SumOfNumbers);
     class Program
     {
         static void Main(string[] args)
@@ -795,70 +796,206 @@ namespace IntroductionToCsharp
             //Console.WriteLine(c4.Id + " - " + c4.Name);
             //Console.WriteLine("Total items in the queue" + customerQueues.Count);
 
-            Console.WriteLine("Please enter the target number");
-            Object target =  Console.ReadLine();
-            numbers n1 = new numbers();
-           
-           // ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
-            Thread T1 = new Thread(n1.Printnumbers);
-            T1.Start(target);
+            // Console.WriteLine("Please enter the target number");
+            // int target = Convert.ToInt32(Console.ReadLine());
+            // sumOfNumbersCallback callback = new sumOfNumbersCallback(PrintSumOfNumbers);
+            // numbers n1 = new numbers(target, callback);
 
-        }
+            //// ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(n1.Printnumbers);
+            // Thread T1 = new Thread(n1.Printnumbers);
+            // T1.Start();
+            //    Console.WriteLine("Main started");
+            //    Thread T1 = new Thread(Program.Thread1Function);
+            //    T1.Start();
 
-        //public static void addNumbers(int fnum, int snum)
-        //{
-        //    Program.addNumbers(fnum,snum,null);
-        //}
-        //public static void addNumbers(int fnum, int snum, int[] nums = null)
-        //{
-        //    int result = fnum + snum;
-        //    if(nums != null)
-        //    {
-        //        foreach (int i in nums)
-        //        {
-        //            result += i;
-        //        }
+            //    Thread T2 = new Thread(Program.Thread2Function);
+            //    T2.Start();
 
-        //    }
-        //    Console.WriteLine("Addition is :" + result);
-        //}
-        //public static void Test(int a=10, int b=20, int c=30)
-        //{
-        //    Console.WriteLine("A is " +a);
-        //    Console.WriteLine("B is " +b);
-        //    Console.WriteLine("C is " +c);
-        //}
-        //public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
-        //{
-        //    int result = fnum + snum;
-        //    if (nums != null)
-        //    {
-        //        foreach (int i in nums)
-        //        {
-        //            result += i;
-        //        }
+            //    if(T1.Join(1000))
+            //    {
+            //        Console.WriteLine("Thread 1 completed");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Thread 1 is not completed in 1 sec");
+            //    }
 
-        //    }
-        //    Console.WriteLine("Addition is :" + result);
-        //}
 
-        
-    }
+            //    T2.Join();
+            //    Console.WriteLine("Thread 2 completed");
+            //    Console.WriteLine("Main completed");
+            //}
 
-    class numbers
-    {
-        public void Printnumbers(object target)
+            //public static void Thread1Function()
+            //{
+            //    Console.WriteLine("Thread 1 started");
+            //    Thread.Sleep(5000);
+            //    Console.WriteLine("Thread 1 is about to return");
+            //}
+            //public static void Thread2Function()
+            //{
+            //    Console.WriteLine("Thread 2 started");
+            //}
+
+            //public static void addNumbers(int fnum, int snum)
+            //{
+            //    Program.addNumbers(fnum,snum,null);
+            //}
+            //public static void addNumbers(int fnum, int snum, int[] nums = null)
+            //{
+            //    int result = fnum + snum;
+            //    if(nums != null)
+            //    {
+            //        foreach (int i in nums)
+            //        {
+            //            result += i;
+            //        }
+
+            //    }
+            //    Console.WriteLine("Addition is :" + result);
+            //}
+            //public static void Test(int a=10, int b=20, int c=30)
+            //{
+            //    Console.WriteLine("A is " +a);
+            //    Console.WriteLine("B is " +b);
+            //    Console.WriteLine("C is " +c);
+            //}
+            //public static void addNumbers(int fnum, int snum, [Optional] int[] nums)
+            //{
+            //    int result = fnum + snum;
+            //    if (nums != null)
+            //    {
+            //        foreach (int i in nums)
+            //        {
+            //            result += i;
+            //        }
+
+            //    }
+            //    Console.WriteLine("Addition is :" + result);
+            //}
+
+            //public static void PrintSumOfNumbers(int sum)
+            // {
+            //     Console.WriteLine(" Sum is = "+sum);
+            // }
+
+
+            //class numbers
+            //{
+            //    private int _target;
+            //    sumOfNumbersCallback _callbackmethod;
+            //    public numbers(int target, sumOfNumbersCallback callbackmethod)
+            //    {
+            //        this._target = target;
+            //        this._callbackmethod = callbackmethod;
+            //    }
+            //    public void Printnumbers(object target)
+            //    {
+            //        int sum = 0;
+            //            for (int i = 1; i <= _target; i++)
+            //            {
+            //            sum = sum + i;
+            //            }
+            //        if(_callbackmethod != null)
+            //        {
+            //            _callbackmethod(sum);
+            //        }
+
+            //    }
+
+            //Console.WriteLine("Main Started");
+            //Account accountA = new Account(101,10000);
+            //Account accountB = new Account(102, 12000);
+
+            //AccountManager accountManagerA = new AccountManager(accountA, accountB, 1000);
+            //Thread T1 = new Thread(accountManagerA.Transfer);
+            //T1.Name = "T1";
+
+            //AccountManager accountManagerB = new AccountManager(accountB, accountA, 2000);
+            //Thread T2 = new Thread(accountManagerB.Transfer);
+            //T1.Name = "T2";
+
+            //T1.Start();
+            //T2.Start();
+
+            //T1.Join();
+            //T2.Join();
+
+            //Console.WriteLine("Main completed");
+
+            //Console.WriteLine(Environment.ProcessorCount);
+            //Stopwatch stopwatch = Stopwatch.StartNew();
+            //EvenNumberSum();
+            //OddNumberSum();
+            //stopwatch.Stop();
+            //Console.WriteLine(" Total time without multiple threads "+stopwatch.ElapsedMilliseconds);
+
+            //stopwatch= Stopwatch.StartNew();
+            //Thread T1 = new Thread(EvenNumberSum);
+            //Thread T2 = new Thread(OddNumberSum);
+
+            //T1.Start();
+            //T2.Start();
+
+            //T1.Join();
+            //T2.Join();
+            //Console.WriteLine(" Total time with multiple threads " + stopwatch.ElapsedMilliseconds);
+            List<Employeeee> emplist = new List<Employeeee>()
         {
-            int number = 0;
-            if(int.TryParse(target.ToString(),out number))
+            new Employeeee(){ID = 101, Name = "Babloo"},
+            new Employeeee(){ID = 102, Name = "Viraj"},
+            new Employeeee(){ID = 103, Name = "Chickoo"}
+        };
+            //Func<Employeeee, string> selector = employee => "Name =" + employee.Name;
+            //IEnumerable<string> names = emplist.Select(selector);
+            IEnumerable<string> names = emplist.Select(employee => "Name =" + employee.Name);
+            foreach (string name in names)
             {
-                for (int i = 1; i <= number; i++)
-                {
-                    Console.WriteLine(i);
-                }
+                Console.WriteLine(name);
             }
-            
+
+            //Employeeee emp = emplist.Find(delegate(Employeeee employee) { return employee.ID == 102; });
+
+            //Console.WriteLine(emp.ID);
+            //Console.WriteLine(emp.Name);
+
         }
+        //public static void EvenNumberSum()
+        //{
+        //    int sum = 0;
+        //    for (int i=0; i<=5000000; i++)
+        //    {
+        //        if(i % 2 == 0)
+        //        {
+        //            sum += i;
+
+        //        }
+        //    }
+        //    Console.WriteLine("Even number sum is : "+sum);
+        //}
+        //public static void OddNumberSum()
+        //{
+        //    int sum = 0;
+        //    for (int i = 0; i <= 5000000; i++)
+        //    {
+        //        if (i % 2 == 1)
+        //        {
+        //            sum += i;
+
+        //        }
+        //    }
+        //    Console.WriteLine("Odd number sum is : " + sum);
+
+        //}
+        
+        
+
     }
 
+
+    public class Employeeee
+    {
+        public int ID;
+        public string Name; 
+    }
 }
